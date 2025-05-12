@@ -1,0 +1,119 @@
+/* Paleta y medidas base */
+:root {
+    --accent: #ffffff;
+    --text: #0303ff;
+    --text-dim: #4f4fff;
+    --border: rgba(3, 3, 255, 0.25);
+    --radius: 8px;
+    --max-width: 1100px;
+  }
+  
+  /* Reset y tipografía */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Inter, sans-serif;
+    background: var(--accent);
+    color: var(--text);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Contenedores principales */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+  }
+  
+  .container {
+    max-width: var(--max-width);
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Logotipo */
+  .logo {
+    width: 160px;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+  
+  /* Hero */
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    color: var(--text-dim);
+  }
+  
+  /* Botón */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--text);
+    border-radius: var(--radius);
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.2s background, 0.2s border-color;
+  }
+  
+  .btn:hover {
+    background: var(--text);
+    color: var(--accent);
+  }
+  
+  /* Grid de tarjetas */
+  .grid {
+    display: grid;
+    gap: 2rem;
+    margin: 4rem 0;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .card {
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: var(--radius);
+    backdrop-filter: blur(4px);
+  }
+  
+  .card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card p {
+    color: var(--text-dim);
+  }
+  
+  /* Contacto */
+  .contact {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Pie */
+  footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-dim);
+  }
+  
