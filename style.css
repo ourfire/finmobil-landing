@@ -3,10 +3,10 @@
    ============================== */
    :root {
     --accent: #ffffff;
-    --text: #0303ff;
-    --text-dim: #4f4fff;
-    --border: rgba(3, 3, 255, 0.25);
-    --radius: 8px;
+    --text: #2b2b2b;
+    --text-dim: #2b2b2b;
+    --border: #0021ff;
+    --radius: 4px;
     --max-width: 1100px;
   }
   
@@ -45,8 +45,8 @@
   }
   
   .logo-small {
-    width: clamp(100px, 15vw, 160px);
-    border-left: 2rem;
+    width: clamp(400px, 15vw, 800px);
+    height: auto;
   }
   
   .brand-name {
