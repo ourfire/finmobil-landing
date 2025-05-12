@@ -34,18 +34,19 @@
      ============================== */
   .site-header {
     position: sticky;
-    top: 0;
+    top: 10;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1.25rem 1rem;
     background: var(--accent);
   }
   
   .logo-small {
     width: clamp(100px, 15vw, 160px);
+    border-left: 2rem;
   }
   
   .brand-name {
@@ -150,17 +151,5 @@
     text-align: center;
     font-size: 0.875rem;
     color: var(--text-dim);
-  }
-  
-  /* ==============================
-     Dark-mode opcional
-     ============================== */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --accent: #0303ff;
-      --text: #ffffff;
-      --text-dim: #d6d6ff;
-      --border: rgba(255, 255, 255, 0.3);
-    }
   }
   
