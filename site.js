@@ -114,7 +114,7 @@
     { t: 'Investor payout', p: 'Interest and principal are paid on the agreed schedule, with periodic reports on portfolio performance.' }
   ] : [
     { t: 'Fondeo', p: 'El inversionista presta a Finmobil mediante un instrumento de deuda privada, con tasa, plazo y calendario de pagos definidos.' },
-    { t: 'Compra de cartera', p: 'Con ese capital compramos cartera de libranza que cumple criterios de elegibilidad, tras due diligence del originador.' },
+    { t: 'Compra de cartera', p: 'Con ese capital compramos cartera de créditos de nómina que cumple criterios de elegibilidad, tras due diligence del originador.' },
     { t: 'Recaudo', p: 'Las pagadurías descuentan las cuotas de nómina y los flujos llegan a un patrimonio autónomo administrado por una fiduciaria.' },
     { t: 'Pago al inversionista', p: 'Intereses y capital se pagan según el calendario pactado, con reportes periódicos del desempeño de la cartera.' }
   ];

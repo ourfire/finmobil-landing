@@ -1,6 +1,6 @@
 # Finmobil — sitio web
 
-Landing institucional de Finmobil S.A.S.: crédito privado respaldado por cartera de libranza en Colombia y México.
+Landing institucional de Finmobil S.A.S.: crédito privado respaldado por cartera de créditos con descuento de nómina en Colombia y México.
 
 Es un sitio estático, sin build. HTML, CSS en línea y JavaScript puro.
 
