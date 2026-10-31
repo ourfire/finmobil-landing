@@ -375,3 +375,18 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Nosotros */
+.about-strip { margin: 0 0 72px; }
+.about-strip h3 { font-size: 20px; line-height: 1.2; }
+
+/* Acceso al simulador: declaración de inversionista profesional */
+[data-gate] { position: relative; }
+[data-gate].locked { min-height: 380px; }
+[data-gate].locked > :not(.gate) { filter: blur(8px); opacity: .5; pointer-events: none; user-select: none; }
+.gate { position: absolute; inset: 0; z-index: 3; display: flex; align-items: flex-start; justify-content: center; padding: 56px 20px 20px; }
+.gate-box { max-width: 440px; display: flex; flex-direction: column; gap: 16px; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(30, 36, 64, .86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 20px 60px rgba(10, 12, 30, .45); }
+.gate-box h3 { font-size: 22px; line-height: 1.2; }
+.gate-box .btn { align-self: flex-start; }
+.gate-box .btn[disabled] { opacity: .45; cursor: not-allowed; }
+@media (max-width: 560px) { .gate { padding: 28px 12px 12px; } .gate-box { padding: 20px; } }

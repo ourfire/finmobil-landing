@@ -28,23 +28,22 @@
       <span>Finmobil</span>
     </a>
     <nav class="nav" aria-label="Main">
+      <a href="#nosotros">About</a>
+      <a href="#como-funciona">How it works</a>
       <a href="#inversionistas">Investors</a>
       <a href="#originadores">Originators</a>
-      <a href="#como-funciona">How it works</a>
-      <a href="#estructura">Structure</a>
-      <a href="#aliados">Partners</a>
       <a href="../" class="lang" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
       <a href="#contacto" class="btn btn-line">Contact</a>
       <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
     </nav>
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#inversionistas">Investors</a>
-    <a href="#originadores">Originators</a>
+    <a href="#nosotros">About</a>
     <a href="#como-funciona">How it works</a>
     <a href="#estructura">Structure</a>
-    <a href="#equipo">Team</a>
+    <a href="#inversionistas">Investors</a>
     <a href="#simulador">Payment schedule</a>
+    <a href="#originadores">Originators</a>
     <a href="#aliados">Partners</a>
   </div>
 </header>
@@ -59,7 +58,7 @@
     <p class="hero-lead">Finmobil acquires portfolios of loans repaid through direct payroll deduction, funded with capital from institutions, investment firms and family offices.</p>
 
     <div class="hero-grid">
-      <div class="card card-dawn" id="inversionistas-visor">
+      <div class="card card-dawn" id="inversionistas-visor" data-gate>
         <h2>For investors</h2>
         <p class="sub">Model your investment cash flows.</p>
 
@@ -193,7 +192,7 @@
       <h2>Payment schedule</h2>
       <p>Updates with the amount, rate and term you choose above.</p>
     </div>
-    <div class="card reveal">
+    <div class="card reveal" data-gate>
       <div class="schedule-head"><h3 id="sched-title">Your investment</h3><span id="out-note"></span></div>
       <div id="sched-wrap" hidden>
         <div class="row-head"><span>Period</span><span>Interest</span><span>Principal</span><span>Payment</span><span>Cumulative</span></div>
@@ -277,12 +276,23 @@
   </div>
 </section>
 
-<!-- EQUIPO -->
-<section class="section" id="equipo">
+<!-- ABOUT: who we are + team -->
+<section class="section" id="nosotros">
   <div class="wrap">
     <div class="section-head reveal">
+      <p class="tag">About</p>
+      <h2>Who we are</h2>
+      <p>Finmobil S.A.S. is a Colombian company headquartered in Bogotá. We buy payroll-deduction loan portfolios in Colombia and Mexico and fund them with private debt from institutions, investment firms and family offices.</p>
+    </div>
+    <div class="strip about-strip reveal">
+      <div><p class="tag">Headquarters</p><h3>Bogotá, Colombia</h3></div>
+      <div><p class="tag">Markets</p><h3>Colombia and Mexico</h3></div>
+      <div><p class="tag">Business</p><h3>Payroll-loan portfolio purchases</h3></div>
+      <div><p class="tag">Funding</p><h3>Private debt from professional investors</h3></div>
+    </div>
+    <div class="section-head reveal" id="equipo" style="margin-bottom:28px">
       <p class="tag">Team</p>
-      <h2>The people running Finmobil</h2>
+      <h2 style="font-size:clamp(30px,3.4vw,44px)">The people running Finmobil</h2>
     </div>
     <div class="partners team">
       <div class="card partner reveal">

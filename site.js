@@ -50,6 +50,62 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // Acceso al simulador: declaración de inversionista institucional o profesional
+  var EN = (document.documentElement.lang || '').slice(0, 2) === 'en';
+  var G = EN ? {
+    tag: 'Professional investors only',
+    h: 'Simulator for institutional and professional investors',
+    c: 'I represent that I am, or act on behalf of, an institutional, qualified or professional investor, and I understand this simulation is illustrative and is not an offer.',
+    b: 'View simulator'
+  } : {
+    tag: 'Solo inversionistas profesionales',
+    h: 'Simulador para inversionistas institucionales y profesionales',
+    c: 'Declaro que soy, o actúo en nombre de, un inversionista institucional, calificado o profesional, y entiendo que esta simulación es ilustrativa y no constituye una oferta.',
+    b: 'Ver simulador'
+  };
+  var GATE_KEY = 'finmobil_inv_prof';
+  var gated = document.querySelectorAll('[data-gate]');
+  var accepted = false;
+  try { accepted = sessionStorage.getItem(GATE_KEY) === '1'; } catch (e) {}
+  function unlockAll() {
+    gated.forEach(function (el) {
+      el.classList.remove('locked');
+      Array.prototype.forEach.call(el.children, function (c) { c.removeAttribute('inert'); c.removeAttribute('aria-hidden'); });
+      var g = el.querySelector(':scope > .gate');
+      if (g) g.remove();
+    });
+  }
+  if (!accepted) {
+    gated.forEach(function (el, i) {
+      Array.prototype.forEach.call(el.children, function (c) { c.setAttribute('inert', ''); c.setAttribute('aria-hidden', 'true'); });
+      el.classList.add('locked');
+      var gate = document.createElement('div');
+      gate.className = 'gate';
+      var box = document.createElement('div');
+      box.className = 'gate-box';
+      box.setAttribute('role', 'group');
+      box.setAttribute('aria-labelledby', 'gate-h-' + i);
+      var tag = document.createElement('p'); tag.className = 'tag'; tag.textContent = G.tag;
+      var h = document.createElement('h3'); h.id = 'gate-h-' + i; h.textContent = G.h;
+      var label = document.createElement('label'); label.className = 'check';
+      var cb = document.createElement('input'); cb.type = 'checkbox';
+      var span = document.createElement('span'); span.textContent = G.c;
+      label.appendChild(cb); label.appendChild(span);
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'btn btn-light'; btn.textContent = G.b; btn.disabled = true;
+      cb.addEventListener('change', function () { btn.disabled = !cb.checked; });
+      btn.addEventListener('click', function () {
+        if (!cb.checked) return;
+        try { sessionStorage.setItem(GATE_KEY, '1'); } catch (e) {}
+        unlockAll();
+        var input = document.getElementById('sim-monto');
+        if (input && el.id === 'inversionistas-visor') input.focus({ preventScroll: true });
+      });
+      box.appendChild(tag); box.appendChild(h); box.appendChild(label); box.appendChild(btn);
+      gate.appendChild(box);
+      el.appendChild(gate);
+    });
+  }
+
   // Recorrido de pasos
   var STEPS = (document.documentElement.lang || '').slice(0, 2) === 'en' ? [
     { t: 'Funding', p: 'The investor lends to Finmobil through a private debt instrument with a set rate, term and payment schedule.' },
