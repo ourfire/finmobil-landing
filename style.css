@@ -280,6 +280,12 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
 .partner .bc { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.1; color: var(--snow); }
 .partner .bc img { width: 30px; height: 30px; object-fit: contain; flex: none; }
 .partner .k { border-top: 1px solid var(--line); padding-top: 14px; }
+.partner > .k, .partner-foot { min-height: 58px; }
+.partner-foot { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
+.partner-foot .k { border-top: 0; padding-top: 0; }
+.li-btn { display: inline-flex; align-items: center; min-height: 32px; padding: 0 10px; border: 1px solid var(--line-strong); border-radius: var(--radius); font-size: 13px; font-weight: 600; color: var(--snow); text-decoration: none; white-space: nowrap; transition: background .3s; }
+.li-btn:hover { background: rgba(255, 255, 255, 0.1); }
+@media (max-width: 560px) { .partner-foot { flex-direction: column; align-items: flex-start; gap: 10px; } .li-btn { min-height: 40px; } }
 .partner .person { gap: 14px; }
 .partner .person h3 { font-size: 21px; line-height: 1.1; }
 .partner .person p { color: var(--muted); font-size: 15px; }
