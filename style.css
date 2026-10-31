@@ -390,3 +390,7 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
 .gate-box .btn { align-self: flex-start; }
 .gate-box .btn[disabled] { opacity: .45; cursor: not-allowed; }
 @media (max-width: 560px) { .gate { padding: 28px 12px 12px; } .gate-box { padding: 20px; } }
+
+/* Aliados (3) y equipo regional (4) */
+.partners.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 860px) { .partners.trio { grid-template-columns: 1fr; } .partners.trio .partner { min-height: 0; } }
