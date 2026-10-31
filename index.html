@@ -1,70 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="style.css"/>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Iconos y color de tema -->
-  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <meta name="msapplication-TileColor" content="#0303ff" />
-  <meta name="theme-color" content="#0303ff" />
-
-  <!-- Pre-carga del logotipo -->
-  <link rel="preload" href="logolargo.png" as="image" type="image/png" />
-
-  <title>FINMOBIL | Datos y Liquidez</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finmobil — Crédito privado respaldado por libranza</title>
+<meta name="description" content="Finmobil adquiere cartera de libranza en Colombia y México, financiada por inversionistas institucionales, sociedades de inversión y family offices.">
+<meta property="og:title" content="Finmobil — Crédito privado respaldado por libranza">
+<meta property="og:description" content="Finmobil adquiere cartera de libranza en Colombia y México, financiada por inversionistas institucionales, sociedades de inversión y family offices.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B23CC">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A0E3F}
+a{color:#79FB67}
+img{max-width:100%}
+:focus-visible{outline:3px solid #79FB67;outline-offset:2px}
+form div{min-width:0}
+form input[type=text],form input[type=email],form select{width:100%}
+@media (max-width: 600px){.hero-visual{transform:scale(0.72);transform-origin:center bottom;height:330px !important;margin-top:-40px}}
+.nav-links a:not(.nav-cta){display:inline}
+@media (max-width: 860px){.nav-links a:not(.nav-cta){display:none}}
+.freq{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #C9CCFF;background:#FFFFFF;color:#0A0E3F;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.freq[aria-pressed="true"]{border-color:#0A0E3F;background:#0A0E3F;color:#FFFFFF;font-weight:600}
+.row{display:grid;grid-template-columns:minmax(64px,0.7fr) repeat(4,minmax(96px,1fr));gap:10px;font-size:15px;min-width:500px;border-bottom:1px solid #EEEFFB}
+.row span{padding:10px 0;text-align:right}.row span:first-child{text-align:left}.row span:nth-child(4){font-weight:600}.row span:nth-child(5){color:#4A4F80}
+#sim-tasa.err{border-color:#B42318 !important}
+</style>
 </head>
-
 <body>
-  <!-- Logotipo -->
-  <img src="logolargo.png" alt="Logotipo FINMOBIL" class="logo-small" />
+<div style="font-family: 'Poppins', system-ui, sans-serif; color: #FFFFFF; background: #0A0E3F; width: 100%; min-height: 100vh">
 
-  <main>
-    <div class="container">
-      <h1>“Potencie el impacto de su capital en el sector cooperativo”
+<!-- HERO -->
+<section id="inicio" style="position: relative; overflow: hidden; background: #0B23CC">
+<nav aria-label="Principal" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#inicio" aria-label="Finmobil, inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF"><svg aria-hidden="true" width="38" height="33" viewBox="112 62 280 244" fill="none" stroke="#FFFFFF" stroke-width="12"><circle cx="177" cy="240" r="58"></circle><rect x="268" y="68" width="116" height="230" rx="58"></rect></svg><span style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 26px">Finmobil</span></a>
+<div class="nav-links" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+<a href="#tesis" style="color: #FFFFFF; text-decoration: none">Tesis</a>
+<a href="#como-funciona" style="color: #FFFFFF; text-decoration: none">Cómo funciona</a>
+<a href="#estructura" style="color: #FFFFFF; text-decoration: none">Estructura</a>
+<a href="#simulador" style="color: #FFFFFF; text-decoration: none">Simulador</a>
+<a href="#originadores" style="color: #FFFFFF; text-decoration: none">Originadores</a>
+<a href="#aliados" style="color: #FFFFFF; text-decoration: none">Aliados</a>
+<a href="#contacto" class="nav-cta" style="background: #79FB67; color: #0A0E3F; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Contactar</a>
+</div>
+</nav>
 
-        ”
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 72px 24px 112px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; align-self: flex-start; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0A0E3F; background: #79FB67; padding: 8px 14px; border-radius: 999px">Crédito privado · Libranza · Colombia y México</p>
+<h1 style="margin: 0; font-size: clamp(42px, 5.2vw, 70px); line-height: 1.03; letter-spacing: -0.03em; font-weight: 600">Deuda privada respaldada por cartera de libranza.</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #E3E5FF; max-width: 580px">Finmobil adquiere cartera de créditos de libranza, que se pagan con descuento directo de nómina, y la financia con capital de instituciones, sociedades de inversión y patrimonios familiares.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contacto" style="background: #79FB67; color: #0A0E3F; text-decoration: none; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 17px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Soy inversionista</a>
+<a href="#originadores" style="background: transparent; color: #FFFFFF; text-decoration: none; padding: 16px 28px; border-radius: 8px; font-weight: 600; font-size: 17px; border: 2px solid #FFFFFF; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero vender cartera</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #D3D6FF">Dirigido exclusivamente a inversionistas institucionales y profesionales.</p>
+</div>
 
-      </h1>
-      <p class="lead">
-        “Conectamos family offices e inversores sofisticados con cooperativas de crédito, a través de estructuras fiduciarias sólidas y análisis de datos avanzados.”</p>
-      <a href="mailto:hola@finmobil.net" class="btn">Conecta con Nosotros</a>
+<div class="hero-visual" aria-hidden="true" style="flex: 1 1 400px; min-width: 0; position: relative; height: 420px">
+<div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: center; gap: 14px; height: 400px">
+<div style="width: 46px; height: 46px; border-radius: 999px; background: #334DF5"></div>
+<div style="width: 46px; height: 130px; border-radius: 999px; background: #334DF5"></div>
+<div style="width: 46px; height: 170px; border-radius: 999px; background: #334DF5"></div>
+<div style="width: 46px; height: 140px; border-radius: 999px; background: #334DF5"></div>
+<div style="width: 140px; height: 260px; border-radius: 32px; background: #79FB67; display: flex; align-items: flex-end; justify-content: center; gap: 12px; padding: 0 14px 20px; box-sizing: border-box">
+<div style="width: 40px; height: 170px; border-radius: 999px; background: #334DF5; margin-bottom: 20px"></div>
+<div style="width: 40px; height: 230px; border-radius: 999px; background: #334DF5; margin-bottom: 40px"></div>
+</div>
+<div style="width: 46px; height: 220px; border-radius: 999px; background: #334DF5"></div>
+<div style="width: 46px; height: 330px; border-radius: 999px; background: #0A1CB1"></div>
+</div>
+<div style="position: absolute; top: 8px; left: 8px; background: #FFFFFF; color: #0A0E3F; border-radius: 20px; padding: 18px 22px; box-shadow: 0 24px 48px -24px rgba(10,14,63,0.7); display: flex; flex-direction: column; gap: 14px; min-width: 240px">
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 40px; height: 40px; border-radius: 999px; background: #79FB67; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0E3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9"></path><path d="M10 19V5"></path><path d="M16 19v-7"></path><path d="M22 19H2"></path></svg></span><div><p style="margin: 0; font-size: 13px; color: #4A4F80">Activo subyacente</p><p style="margin: 2px 0 0; font-size: 17px; font-weight: 600">Crédito de libranza</p></div></div>
+<div style="height: 1px; background: #E6E8FA"></div>
+<div style="display: flex; align-items: center; gap: 14px"><span style="width: 40px; height: 40px; border-radius: 999px; background: #E9ECFF; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B23CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10h18"></path></svg></span><div><p style="margin: 0; font-size: 13px; color: #4A4F80">Recaudo</p><p style="margin: 2px 0 0; font-size: 17px; font-weight: 600">Descuento de nómina</p></div></div>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="grid">
-        <section class="card">
-          <h2>“Soluciones de liquidez a medida”</h2>
-          <p>
-            “Diseñamos líneas de financiamiento y vehículos fiduciarios que permiten a su cooperativa de ahorro y crédito acceder a capital de manera ágil, transparente y conforme a los más altos estándares de gobierno corporativo. Respaldamos cada operación con reportes de data-driven insights que optimizan la toma de decisiones.”
-          </p>
-        </section>
+<!-- THESIS -->
+<section id="tesis" style="background: #F2F3FF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px 104px">
+<div style="max-width: 780px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">La tesis</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">Un activo que se paga desde la fuente y al que le falta capital.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<div style="padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 14px">
+<div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 6px; height: 36px"><span style="width: 12px; height: 14px; border-radius: 999px; background: #0B23CC"></span><span style="width: 12px; height: 24px; border-radius: 999px; background: #0B23CC"></span><span style="width: 12px; height: 36px; border-radius: 999px; background: #0B23CC"></span></div>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Pago desde la nómina</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 16px">La cuota la descuenta el empleador o la pagaduría antes de pagar el salario o la pensión. El deudor no decide si paga este mes.</p>
+</div>
+<div style="padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 14px">
+<div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 6px; height: 36px"><span style="width: 12px; height: 26px; border-radius: 999px; background: #0B23CC"></span><span style="width: 12px; height: 26px; border-radius: 999px; background: #0B23CC"></span><span style="width: 12px; height: 26px; border-radius: 999px; background: #0B23CC"></span></div>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Flujos estables y atomizados</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 16px">Miles de créditos pequeños, repartidos entre pagadurías, con baja correlación frente a los mercados públicos.</p>
+</div>
+<div style="padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 14px">
+<div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 6px; height: 36px"><span style="width: 12px; height: 36px; border-radius: 999px; background: #0B23CC"></span><span style="width: 12px; height: 20px; border-radius: 999px; background: #C9CCFF"></span><span style="width: 12px; height: 10px; border-radius: 999px; background: #C9CCFF"></span></div>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Originadores sin fondeo</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 16px">Cooperativas y originadores tienen demanda de crédito que no pueden atender por falta de liquidez. Ahí compramos.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <section class="card">
-          <h2>“Oportunidades exclusivas de inversión”</h2>
-          <p>
-            “Participe en nuestros Fondos de Deuda Cooperativa y acceda a rendimientos estables, diversificados y con perfil de riesgo controlado. Su capital se asigna a proyectos crediticios de alto impacto regional, contribuyendo al desarrollo sostenible del sector y a su legado financiero.”
-          </p>
-        </section>
-      </div>
+<!-- HOW IT WORKS -->
+<section id="como-funciona" style="background: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #79FB67">Cómo funciona</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">Del capital a la cartera, y de vuelta.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="padding: 28px; border-radius: 24px; background: #151A5C; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0B23CC; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px">1</span>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Fondeo</h3>
+<p style="margin: 0; color: #C9CCFF; line-height: 1.6">El inversionista presta a Finmobil mediante un instrumento de deuda privada, con tasa, plazo y calendario de pagos definidos.</p>
+</div>
+<div style="padding: 28px; border-radius: 24px; background: #151A5C; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0B23CC; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px">2</span>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Compra de cartera</h3>
+<p style="margin: 0; color: #C9CCFF; line-height: 1.6">Con ese capital compramos cartera de libranza que cumple criterios de elegibilidad, tras due diligence del originador.</p>
+</div>
+<div style="padding: 28px; border-radius: 24px; background: #151A5C; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0B23CC; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px">3</span>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Recaudo</h3>
+<p style="margin: 0; color: #C9CCFF; line-height: 1.6">Las pagadurías descuentan las cuotas de nómina y los flujos llegan a un patrimonio autónomo administrado por una fiduciaria.</p>
+</div>
+<div style="padding: 28px; border-radius: 24px; background: #79FB67; color: #0A0E3F; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0A0E3F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px">4</span>
+<h3 style="margin: 0; font-size: 21px; font-weight: 600">Pago al inversionista</h3>
+<p style="margin: 0; color: #1B2150; line-height: 1.6">Intereses y capital se pagan según el calendario pactado, con reportes periódicos del desempeño de la cartera.</p>
+</div>
+</div>
+</div>
+</section>
 
-      <section class="card contact">
-        <h2>¿Listo para transformar su portafolio?</h2>
-        <p>
-          En FINMOBIL diseñamos estrategias de inversión alineadas con sus objetivos
-          patrimoniales y de impacto. Nuestro equipo está a su disposición para mostrarle casos
-          de éxito y proyecciones de retorno.
-        </p>
-        <a href="https://wa.me/+573202278349?text=Hola%20FINMOBIL,%20quiero%20agendar%20mi%20sesión%20estratégica"
-           class="btn"
-           target="_blank"
-           rel="noopener">
-          Chatea con nosotros por WhatsApp
-        </a>
-      </section>
-    </div>
-  </main>
+<!-- STRUCTURE / PROTECTIONS -->
+<section id="estructura" style="background: #F2F3FF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">Estructura y protecciones</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">Diseñada para que el capital esté protegido antes de rendir.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A4F80">Separación de activos, alineación con el originador y visibilidad del activo subyacente.</p>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="padding: 28px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 12px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 16px; background: #0B23CC; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7l8-4z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Patrimonio autónomo</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 15px">La cartera y su recaudo quedan en un vehículo fiduciario, separados del balance de Finmobil y del originador.</p>
+</div>
+<div style="padding: 28px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 12px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 16px; background: #0B23CC; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="5"></circle><circle cx="15" cy="15" r="5"></circle></svg></span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Originador alineado</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 15px">Retención de una parte del precio de compra y obligación de recompra de créditos que no cumplan los criterios.</p>
+</div>
+<div style="padding: 28px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; gap: 12px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 16px; background: #0B23CC; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"></path><path d="M4 12h10"></path><path d="M4 18h6"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Criterios de elegibilidad</h3>
+<p style="margin: 0; color: #4A4F80; line-height: 1.6; font-size: 15px">Límites por deudor, pagaduría y originador; tasa, plazo y perfil del crédito definidos antes de cada compra.</p>
+</div>
+<div style="padding: 28px; background: #79FB67; border-radius: 24px; display: flex; flex-direction: column; gap: 12px">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 16px; background: #0A0E3F; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg></span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Trazabilidad total</h3>
+<p style="margin: 0; color: #1B2150; line-height: 1.6; font-size: 15px">Registro tokenizado de la cartera y reportes de recaudo, mora y prepagos crédito por crédito.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <footer>© 2025 FINMOBIL | Capital para el crecimiento cooperativo</footer>
+<!-- INVESTOR PROFILE + TERMS -->
+<section id="inversionistas" style="background: #FFFFFF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">Para inversionistas</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">Para quién es.</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="padding: 10px 16px; border-radius: 999px; background: #F2F3FF; font-weight: 500">Instituciones financieras</span>
+<span style="padding: 10px 16px; border-radius: 999px; background: #F2F3FF; font-weight: 500">Sociedades de inversión</span>
+<span style="padding: 10px 16px; border-radius: 999px; background: #F2F3FF; font-weight: 500">Family offices</span>
+<span style="padding: 10px 16px; border-radius: 999px; background: #F2F3FF; font-weight: 500">Inversionistas de alto patrimonio</span>
+<span style="padding: 10px 16px; border-radius: 999px; background: #F2F3FF; font-weight: 500">Fondos de deuda privada</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4F80">Los términos completos, el modelo financiero y el historial de la cartera se comparten en el memorando de inversión y el data room, previo acuerdo de confidencialidad.</p>
+</div>
+<div style="flex: 1 1 440px; min-width: 0; background: #F2F3FF; border-radius: 24px; padding: 32px">
+<h3 style="margin: 0 0 20px; font-size: 20px; font-weight: 600">Términos indicativos</h3>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5"><span style="color: #4A4F80">Instrumento</span><span style="font-weight: 600; text-align: right">Deuda privada</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5"><span style="color: #4A4F80">Ticket mínimo</span><span style="font-weight: 600; text-align: right">A convenir</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5"><span style="color: #4A4F80">Rendimiento objetivo</span><span style="font-weight: 600; text-align: right">6% – 24% anual, según operación</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5"><span style="color: #4A4F80">Plazo</span><span style="font-weight: 600; text-align: right">6 a 60 meses</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5"><span style="color: #4A4F80">Pago de intereses</span><span style="font-weight: 600; text-align: right">Mensual, trimestral, semestral o al vencimiento</span></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #DADCF5; border-bottom: 1px solid #DADCF5"><span style="color: #4A4F80">Moneda</span><span style="font-weight: 600; text-align: right">COP, MXN o USD</span></div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #4A4F80; line-height: 1.5">Términos indicativos sujetos a la documentación definitiva.</p>
+</div>
+</div>
+</section>
+
+<!-- SIMULATOR -->
+<section id="simulador" style="background: #F2F3FF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">Simulador</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">Calcula los flujos de tu inversión.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A4F80">Ingresa monto, tasa y plazo para ver cuánto recibirías en cada pago.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+
+<div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="sim-moneda" style="font-size: 14px; color: #4A4F80; font-weight: 500">Moneda</label><select id="sim-moneda" style="min-height: 52px; border-radius: 10px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 18px; font-weight: 600; font-family: inherit; color: #0A0E3F; background: #FFFFFF; width: 100%"><option value="USD">USD · Dólar</option><option value="COP">COP · Peso colombiano</option><option value="MXN">MXN · Peso mexicano</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="sim-monto" style="font-size: 14px; color: #4A4F80; font-weight: 500">Monto a invertir</label><input id="sim-monto" type="number" min="0" step="1000" inputmode="decimal" value="100000" style="min-height: 52px; border-radius: 10px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 18px; font-weight: 600; font-family: inherit; color: #0A0E3F; background: #FFFFFF; width: 100%"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="sim-tasa" style="font-size: 14px; color: #4A4F80; font-weight: 500">Tasa anual (%) · entre 6% y 24%</label><input id="sim-tasa" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="Entre 6 y 24" aria-describedby="sim-tasa-aviso" style="min-height: 52px; border-radius: 10px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 18px; font-weight: 600; font-family: inherit; color: #0A0E3F; background: #FFFFFF; width: 100%; border: 2px solid #0B23CC"><input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="6" aria-label="Tasa anual, deslizador" style="width: 100%; accent-color: #0B23CC; margin: 4px 0 0; min-height: 28px"><div aria-hidden="true" style="display: flex; justify-content: space-between; font-size: 12px; color: #4A4F80"><span>6%</span><span>15%</span><span>24%</span></div><p id="sim-tasa-aviso" role="alert" hidden style="margin: 0; font-size: 14px; color: #B42318; font-weight: 500">La tasa debe estar entre 6% y 24% anual.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="sim-plazo" style="font-size: 14px; color: #4A4F80; font-weight: 500">Plazo</label><select id="sim-plazo" style="min-height: 52px; border-radius: 10px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 18px; font-weight: 600; font-family: inherit; color: #0A0E3F; background: #FFFFFF; width: 100%"><option value="6">6 meses</option><option value="12" selected>12 meses</option><option value="18">18 meses</option><option value="24">24 meses</option><option value="36">36 meses</option><option value="48">48 meses</option><option value="60">60 meses</option></select></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span id="sim-freq-label" style="font-size: 14px; color: #4A4F80; font-weight: 500">Pago de intereses</span>
+<div id="sim-freq" role="group" aria-labelledby="sim-freq-label" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="freq" data-f="1" aria-pressed="true">Mensual</button>
+<button type="button" class="freq" data-f="3" aria-pressed="false">Trimestral</button>
+<button type="button" class="freq" data-f="6" aria-pressed="false">Semestral</button>
+<button type="button" class="freq" data-f="0" aria-pressed="false">Al vencimiento</button>
+</div>
+</div>
+</div>
+
+<div style="flex: 1.4 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="background: #0B23CC; color: #FFFFFF; border-radius: 24px; padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px" aria-live="polite">
+<div><p id="out-per-label" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #D3D6FF">Pago mensual</p><p id="out-per" style="margin: 6px 0 0; font-size: 30px; font-weight: 700; letter-spacing: -0.02em">—</p></div>
+<div><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #D3D6FF">Intereses totales</p><p id="out-int" style="margin: 6px 0 0; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #79FB67">—</p></div>
+<div><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #D3D6FF">Total a recibir</p><p id="out-total" style="margin: 6px 0 0; font-size: 30px; font-weight: 700; letter-spacing: -0.02em">—</p></div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 24px; padding: 24px 28px; flex: 1 1 auto; display: flex; flex-direction: column; gap: 12px; min-height: 0">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Calendario de pagos</h3><span id="out-note" style="font-size: 14px; color: #4A4F80"></span></div>
+<div id="sched-wrap" hidden style="max-height: 340px; overflow-y: auto; overflow-x: auto; position: relative">
+<div style="display: grid; grid-template-columns: minmax(64px, 0.7fr) repeat(4, minmax(96px, 1fr)); gap: 10px; min-width: 500px; font-size: 13px; font-weight: 600; color: #4A4F80; position: sticky; top: 0; background: #FFFFFF; border-bottom: 1px solid #DADCF5; z-index: 1"><span style="padding: 10px 0">Pago</span><span style="padding: 10px 0; text-align: right">Intereses</span><span style="padding: 10px 0; text-align: right">Capital</span><span style="padding: 10px 0; text-align: right">Pago del mes</span><span style="padding: 10px 0; text-align: right">Acumulado</span></div>
+<div id="sched-rows"></div>
+<div style="display: grid; grid-template-columns: minmax(64px, 0.7fr) repeat(4, minmax(96px, 1fr)); gap: 10px; min-width: 500px; font-size: 15px; font-weight: 700; position: sticky; bottom: 0; background: #F2F3FF; border-radius: 10px; margin: 6px 0 0"><span style="padding: 12px 0">Total</span><span id="tot-int" style="padding: 12px 0; text-align: right"></span><span id="tot-cap" style="padding: 12px 0; text-align: right"></span><span id="tot-all" style="padding: 12px 0; text-align: right"></span><span></span></div>
+</div>
+<p id="sched-empty" style="margin: 0; padding: 24px 0; color: #4A4F80">Ingresa el monto y la tasa para ver el calendario.</p>
+</div>
+</div>
+</div>
+<p style="margin: 20px 0 0; font-size: 13px; color: #4A4F80; line-height: 1.5; max-width: 900px">Simulación ilustrativa con interés simple sobre el capital, antes de impuestos y retenciones. No constituye una oferta ni garantiza rendimientos; los términos definitivos dependen de la documentación de cada operación.</p>
+</div>
+</section>
+
+<!-- RISKS -->
+<section style="background: #F2F3FF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">Riesgos</p>
+<h2 style="margin: 0; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600">Los conocemos y los gestionamos.</h2>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Crédito</h3><p style="margin: 0; color: #4A4F80; line-height: 1.55; font-size: 15px">Pérdida de empleo o fallecimiento del deudor. Mitigado con seguros, diversificación y límites de concentración.</p></div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Pagaduría</h3><p style="margin: 0; color: #4A4F80; line-height: 1.55; font-size: 15px">Retrasos del empleador en girar el recaudo. Mitigado con límites por pagaduría y monitoreo mensual.</p></div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Originador</h3><p style="margin: 0; color: #4A4F80; line-height: 1.55; font-size: 15px">Fallas en la administración o en la calidad de la cartera. Mitigado con due diligence, retención y administrador de respaldo.</p></div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Regulatorio y cambiario</h3><p style="margin: 0; color: #4A4F80; line-height: 1.55; font-size: 15px">Cambios normativos o de tipo de cambio en Colombia y México. Detallados en el memorando de inversión.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ORIGINATORS -->
+<section id="originadores" style="background: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #79FB67">Para originadores</p>
+<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600">¿Originas crédito de libranza? Conversemos.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9CCFF">Cooperativas y originadores en Colombia y México que quieren colocar más crédito sin esperar a que la cartera madure.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; background: #79FB67; display: flex; align-items: center; justify-content: center; flex: none; margin-top: 1px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0E3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><p style="margin: 0; line-height: 1.55">Compras recurrentes de cartera, no operaciones únicas.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; background: #79FB67; display: flex; align-items: center; justify-content: center; flex: none; margin-top: 1px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0E3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><p style="margin: 0; line-height: 1.55">Puedes seguir administrando el recaudo y la relación con tus clientes.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; background: #79FB67; display: flex; align-items: center; justify-content: center; flex: none; margin-top: 1px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A0E3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span><p style="margin: 0; line-height: 1.55">Estructura fiduciaria y documentación estándar desde la primera compra.</p></div>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; background: #0B23CC; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; line-height: 1.2">Construyamos una alianza de largo plazo.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #E3E5FF">Queremos conocer tu operación y explorar cómo podemos crecer juntos. Escríbenos y agendamos una conversación con nuestro equipo.</p>
+<div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; color: #FFFFFF">Para avanzar más rápido, cuéntanos:</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #E3E5FF">Entidad y país · Saldo de cartera de libranza · Principales pagadurías · Comportamiento histórico de la cartera</p>
+</div>
+<a href="mailto:info@finmobilsas.com?subject=Alianza%20con%20Finmobil%20-%20Originaci%C3%B3n%20de%20libranza" style="align-self: flex-start; background: #79FB67; color: #0A0E3F; text-decoration: none; padding: 16px 26px; border-radius: 8px; font-weight: 600; font-size: 17px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0E3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Escríbenos</a>
+<p style="margin: 0; font-size: 15px; color: #E3E5FF">o directamente a <a href="mailto:info@finmobilsas.com" style="color: #FFFFFF; font-weight: 600">info@finmobilsas.com</a></p>
+</div>
+</div>
+</section>
+
+<!-- PARTNERS & ADVISORS -->
+<section id="aliados" style="background: #FFFFFF; color: #0A0E3F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0B23CC">Aliados y asesores</p>
+<h2 style="margin: 0; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600">Trabajamos con quienes el inversionista ya conoce.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 56px">
+<div style="min-height: 112px; border-radius: 20px; background: #F2F3FF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center"><span style="display: flex; align-items: center; gap: 10px"><img src="assets/fiduciaria-bancolombia.png" alt="" style="width: 36px; height: 36px; object-fit: contain"><span style="font-weight: 600; font-size: 19px; color: #0A0E3F">Fiduciaria Bancolombia</span></span><span style="font-size: 13px; color: #4A4F80">Fiduciaria</span></div>
+<div style="min-height: 112px; border-radius: 20px; background: #F2F3FF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center"><img src="assets/deloitte.png" alt="Deloitte" style="height: 28px; width: auto; display: block"><span style="font-size: 13px; color: #4A4F80">Auditoría · Colombia y México</span></div>
+<div style="min-height: 112px; border-radius: 20px; background: #F2F3FF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center"><span style="font-weight: 500; font-size: 15px; color: #4A4F80">Por anunciar</span><span style="font-size: 13px; color: #4A4F80">Asesoría legal · Colombia y México</span></div>
+<div style="min-height: 112px; border-radius: 20px; background: #F2F3FF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center"><span style="font-weight: 500; font-size: 15px; color: #4A4F80">Por anunciar</span><span style="font-size: 13px; color: #4A4F80">Originador aliado</span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="background: #F2F3FF; border-radius: 24px; padding: 28px; display: flex; gap: 18px; align-items: center">
+<div aria-hidden="true" style="width: 64px; height: 64px; border-radius: 999px; background: #0B23CC; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px; flex: none">AR</div>
+<div><h3 style="margin: 0; font-size: 18px; font-weight: 600">Andrés Rodríguez</h3><p style="margin: 4px 0 0; color: #4A4F80; font-size: 15px">Business Developer · Canadá</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT (investors) -->
+<section id="contacto" style="background: #0B23CC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-size: clamp(36px, 4.2vw, 56px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 600">Solicita el memorando de inversión.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #E3E5FF">Cuéntanos sobre tu institución. Te contactaremos para agendar una reunión y compartir el data room.</p>
+</div>
+<form name="inversionistas" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field" style="flex: 1 1 440px; min-width: 0; background: #FFFFFF; color: #0A0E3F; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 170px; display: flex; flex-direction: column; gap: 6px"><label for="in-nombre" style="font-size: 14px; color: #4A4F80">Nombre</label><input type="hidden" name="form-name" value="inversionistas"><p hidden><label>No llenar <input name="bot-field"></label></p><input id="in-nombre" name="nombre" type="text" required autocomplete="name" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 16px; font-family: inherit"></div>
+<div style="flex: 1 1 170px; display: flex; flex-direction: column; gap: 6px"><label for="in-entidad" style="font-size: 14px; color: #4A4F80">Institución</label><input id="in-entidad" name="institucion" type="text" required autocomplete="organization" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 16px; font-family: inherit"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="in-email" style="font-size: 14px; color: #4A4F80">Correo corporativo</label><input id="in-email" name="correo" type="email" required autocomplete="email" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 16px; font-family: inherit"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 170px; display: flex; flex-direction: column; gap: 6px"><label for="in-tipo" style="font-size: 14px; color: #4A4F80">Tipo de inversionista</label><select id="in-tipo" name="tipo_inversionista" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9CCFF; padding: 0 12px; font-size: 16px; font-family: inherit; background: #FFFFFF"><option>Institución financiera</option><option>Sociedad de inversión</option><option>Family office</option><option>Alto patrimonio</option><option>Fondo de deuda privada</option></select></div>
+<div style="flex: 1 1 170px; display: flex; flex-direction: column; gap: 6px"><label for="in-monto" style="font-size: 14px; color: #4A4F80">Monto indicativo</label><input id="in-monto" name="monto_indicativo" type="text" placeholder="Ej. USD 500.000" style="min-height: 48px; border-radius: 8px; border: 1px solid #C9CCFF; padding: 0 14px; font-size: 16px; font-family: inherit"></div>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><input id="in-calificado" name="declaracion_inversionista" value="si" type="checkbox" required style="width: 20px; height: 20px; margin: 2px 0 0; flex: none; accent-color: #0B23CC"><label for="in-calificado" style="font-size: 14px; line-height: 1.5; color: #1B2150">Declaro que actúo en nombre de un inversionista institucional, calificado o profesional.</label></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><input id="in-datos" name="autorizacion_datos" value="si" type="checkbox" required style="width: 20px; height: 20px; margin: 2px 0 0; flex: none; accent-color: #0B23CC"><label for="in-datos" style="font-size: 14px; line-height: 1.5; color: #1B2150">Autorizo a Finmobil S.A.S. a tratar mis datos personales para contactarme, conforme a su <a href="legal.html#privacidad" style="color: #0B23CC; font-weight: 600">Política de privacidad y tratamiento de datos</a>.</label></div>
+<button type="submit" style="min-height: 52px; border: 0; border-radius: 8px; background: #79FB67; color: #0A0E3F; font-size: 17px; font-weight: 600; font-family: inherit; cursor: pointer; margin-top: 4px">Solicitar información</button>
+<p style="margin: 0; font-size: 13px; color: #4A4F80; line-height: 1.5">Solo para inversionistas institucionales y profesionales. Enviar este formulario no constituye un compromiso de inversión.</p>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #0A0E3F; color: #C9CCFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center">
+<span style="display: flex; align-items: center; gap: 12px; color: #FFFFFF"><svg aria-hidden="true" width="32" height="28" viewBox="112 62 280 244" fill="none" stroke="#FFFFFF" stroke-width="12"><circle cx="177" cy="240" r="58"></circle><rect x="268" y="68" width="116" height="230" rx="58"></rect></svg><span style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 22px">Finmobil</span></span>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px">
+<a href="legal.html#privacidad" style="color: #C9CCFF">Privacidad y datos</a>
+<a href="legal.html#terminos" style="color: #C9CCFF">Términos de uso</a>
+<a href="legal.html#aviso-legal" style="color: #C9CCFF">Aviso legal</a>
+<a href="mailto:info@finmobilsas.com" style="color: #C9CCFF">info@finmobilsas.com</a>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.65; color: #A3A8E0; max-width: 900px">Finmobil S.A.S. · info@finmobilsas.com<br>Este sitio tiene fines exclusivamente informativos y está dirigido a inversionistas institucionales y profesionales. No constituye una oferta pública de valores, una solicitud de captación de recursos del público ni una recomendación de inversión. Cualquier operación se realizará mediante documentación privada y conforme a la regulación aplicable en Colombia y México. Toda inversión conlleva riesgos, incluida la pérdida del capital. Las cifras del simulador y los rendimientos objetivo son ilustrativos y no garantizan resultados futuros. Finmobil S.A.S. no es una entidad vigilada por la Superintendencia Financiera de Colombia ni por la Comisión Nacional Bancaria y de Valores.</p>
+</div>
+</footer>
+
+</div>
+<script src="simulador.js"></script>
 </body>
 </html>
