@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finmobil — Private credit backed by payroll-deduction loans</title>
+<meta name="description" content="Finmobil acquires payroll-deduction loan portfolios in Colombia and Mexico, funded by institutional investors, investment firms and family offices.">
+<meta property="og:title" content="Finmobil — Private credit backed by payroll-deduction loans">
+<meta property="og:description" content="Finmobil acquires payroll-deduction loan portfolios in Colombia and Mexico, funded by institutional investors, investment firms and family offices.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1E2440">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="es" href="https://finmobilsas.com/">
+<link rel="alternate" hreflang="en" href="https://finmobilsas.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://finmobilsas.com/">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="Finmobil, home">
+      <svg aria-hidden="true" viewBox="112 62 280 244" fill="none" stroke="currentColor" stroke-width="12"><circle cx="177" cy="240" r="58"/><rect x="268" y="68" width="116" height="230" rx="58"/></svg>
+      <span>Finmobil</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#inversionistas">Investors</a>
+      <a href="#originadores">Originators</a>
+      <a href="#como-funciona">How it works</a>
+      <a href="#estructura">Structure</a>
+      <a href="#aliados">Partners</a>
+      <a href="../" class="lang" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
+      <a href="#contacto" class="btn btn-line">Contact</a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#inversionistas">Investors</a>
+    <a href="#originadores">Originators</a>
+    <a href="#como-funciona">How it works</a>
+    <a href="#estructura">Structure</a>
+    <a href="#simulador">Payment schedule</a>
+    <a href="#aliados">Partners</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO: visor del simulador + originadores -->
+<section class="hero" id="inicio">
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1>Private credit backed by payroll-deduction loans</h1>
+    <p class="hero-lead">Finmobil acquires portfolios of loans repaid through direct payroll deduction, funded with capital from institutions, investment firms and family offices.</p>
+
+    <div class="hero-grid">
+      <div class="card card-dawn" id="inversionistas-visor">
+        <h2>For investors</h2>
+        <p class="sub">Model your investment cash flows.</p>
+
+        <div class="amount">
+          <label for="sim-monto" class="k">Investment amount</label>
+          <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
+        </div>
+
+        <div class="controls">
+          <div class="field notch"><label for="sim-moneda">Currency</label>
+            <select id="sim-moneda" class="input"><option value="USD">USD · Dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option></select></div>
+          <div class="field f-rate">
+            <div class="notch"><label for="sim-tasa">Annual rate · 6% to 24%</label>
+              <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="e.g. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
+            <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Annual rate slider">
+            <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
+            <p id="sim-tasa-aviso" class="warn" role="alert" hidden>The rate must be between 6% and 24% per year.</p>
+          </div>
+          <div class="field notch"><label for="sim-plazo">Term</label>
+            <select id="sim-plazo" class="input"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
+        </div>
+
+        <div id="sim-freq" class="freq-group" role="group" aria-label="Interest payments">
+          <button type="button" class="freq" data-f="1" aria-pressed="true">Monthly</button>
+          <button type="button" class="freq" data-f="3" aria-pressed="false">Quarterly</button>
+          <button type="button" class="freq" data-f="6" aria-pressed="false">Semiannual</button>
+          <button type="button" class="freq" data-f="0" aria-pressed="false">At maturity</button>
+        </div>
+
+        <div class="cells" aria-live="polite">
+          <div><p class="k" id="out-per-label">Monthly payment</p><p class="v" id="out-per">—</p></div>
+          <div><p class="k">Total interest</p><p class="v accent" id="out-int">—</p></div>
+          <div><p class="k">Total received</p><p class="v" id="out-total">—</p></div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-light">Request the memorandum</a>
+          <a href="#simulador" class="link">See payment schedule</a>
+        </div>
+        <p class="note">Illustrative simulation. For institutional and professional investors only.</p>
+      </div>
+
+      <div class="card card-night">
+        <h2>For originators</h2>
+        <p class="sub">Turn your payroll-loan portfolio into liquidity and lend more.</p>
+        <ul>
+          <li>Recurring portfolio purchases</li>
+          <li>You keep servicing collections</li>
+          <li>Fiduciary structure from the first purchase</li>
+        </ul>
+        <p class="mail">Write to us at <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination">info@finmobilsas.com</a></p>
+      </div>
+    </div>
+
+    <div class="strip" id="estructura-resumen">
+      <div><p class="tag">Segregated trust</p><h3>Ring-fenced assets</h3><p>Portfolio and collections held off Finmobil’s balance sheet.</p></div>
+      <div><p class="tag">Aligned originator</p><h3>Holdback and repurchase</h3><p>The seller shares the portfolio risk.</p></div>
+      <div><p class="tag">Eligibility</p><h3>Limits per payroll payer</h3><p>Criteria set before every purchase.</p></div>
+      <div><p class="tag">Traceability</p><h3>Tokenized registry</h3><p>Collections and delinquency, loan by loan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESIS -->
+<section class="section" id="tesis">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">The thesis</p>
+      <h2>An asset paid at the source, and short of capital</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <article><h3>Paid straight<br>from payroll</h3><p>The employer or payroll office deducts the installment before paying the salary or pension. The borrower doesn’t decide whether to pay this month.</p></article>
+      <article><h3>Stable, granular<br>cash flows</h3><p>Thousands of small loans spread across payroll payers, with low correlation to public markets.</p></article>
+      <article><h3>Originators<br>short of funding</h3><p>Credit unions and originators have loan demand they can’t meet for lack of liquidity. That’s where we buy.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section" id="como-funciona">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">How it works</p>
+      <h2>From capital to portfolio, and back</h2>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-visual" aria-hidden="true">
+        <svg viewBox="112 62 280 244" fill="none" stroke="#FFFFFF" stroke-width="10"><circle cx="177" cy="240" r="58"/><rect x="268" y="68" width="116" height="230" rx="58"/></svg>
+        <span class="flow-num" id="flow-num">01</span>
+      </div>
+      <div class="card flow-card">
+        <div class="flow-panel" id="flow-panel" aria-live="polite">
+          <div class="fade"><h3>Funding</h3><p>The investor lends to Finmobil through a private debt instrument with a set rate, term and payment schedule.</p></div>
+        </div>
+        <div>
+          <div class="stepper" role="tablist" aria-label="Steps">
+            <button class="step-btn" role="tab" aria-selected="true" data-step="0"><span class="n">01</span>Funding</button>
+            <button class="step-btn" role="tab" aria-selected="false" data-step="1"><span class="n">02</span>Portfolio purchase</button>
+            <button class="step-btn" role="tab" aria-selected="false" data-step="2"><span class="n">03</span>Collection</button>
+            <button class="step-btn" role="tab" aria-selected="false" data-step="3"><span class="n">04</span>Investor payout</button>
+          </div>
+          <div class="step-progress" aria-hidden="true"><span id="step-bar"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUCTURA -->
+<section class="section" id="estructura">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">Structure and protections</p>
+      <h2>Built to protect capital before it earns</h2>
+      <p>Asset segregation, originator alignment and visibility into the underlying asset.</p>
+    </div>
+    <div class="rows reveal">
+      <div><h3>Segregated trust</h3><p>The portfolio and its collections sit in a fiduciary vehicle (patrimonio autónomo), separate from Finmobil’s and the originator’s balance sheets.</p></div>
+      <div><h3>Aligned originator</h3><p>A holdback on part of the purchase price and an obligation to repurchase loans that fail the criteria.</p></div>
+      <div><h3>Eligibility criteria</h3><p>Limits per borrower, payroll payer and originator; loan rate, term and profile set before each purchase.</p></div>
+      <div><h3>Full traceability</h3><p>Tokenized registry of the portfolio, with loan-level reporting on collections, delinquencies and prepayments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section class="section" id="simulador">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">Simulator</p>
+      <h2>Payment schedule</h2>
+      <p>Updates with the amount, rate and term you choose above.</p>
+    </div>
+    <div class="card reveal">
+      <div class="schedule-head"><h3 id="sched-title">Your investment</h3><span id="out-note"></span></div>
+      <div id="sched-wrap" hidden>
+        <div class="row-head"><span>Period</span><span>Interest</span><span>Principal</span><span>Payment</span><span>Cumulative</span></div>
+        <div id="sched-rows"></div>
+        <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
+      </div>
+      <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Enter the amount and rate to see the schedule.</p>
+    </div>
+    <p class="disclaimer">Illustrative simulation using simple interest on principal, before taxes and withholdings. It is not an offer and does not guarantee returns; final terms depend on each transaction’s documentation.</p>
+  </div>
+</section>
+
+<!-- INVERSIONISTAS -->
+<section class="section" id="inversionistas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">For investors</p>
+      <h2>Who it’s for</h2>
+    </div>
+    <div class="split">
+      <div class="card reveal" style="display:flex;flex-direction:column;gap:20px">
+        <div class="chips">
+          <span class="pill">Financial institutions</span>
+          <span class="pill">Investment firms</span>
+          <span class="pill">Family offices</span>
+          <span class="pill">High-net-worth investors</span>
+          <span class="pill">Private debt funds</span>
+        </div>
+        <p style="color:var(--muted)">Full terms, the financial model and portfolio history are shared in the investment memorandum and data room, under a non-disclosure agreement.</p>
+      </div>
+      <div class="card terms reveal d1">
+        <h3 style="font-size:24px;margin-bottom:10px">Indicative terms</h3>
+        <div><span>Instrument</span><span>Private debt</span></div>
+        <div><span>Minimum ticket</span><span>Negotiable</span></div>
+        <div><span>Target return</span><span>6% – 24% per year, by transaction</span></div>
+        <div><span>Term</span><span>6 to 60 months</span></div>
+        <div><span>Interest payments</span><span>Monthly, quarterly, semiannual or at maturity</span></div>
+        <div><span>Currency</span><span>COP, MXN or USD</span></div>
+        <small>Indicative terms, subject to final documentation.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIESGOS -->
+<section class="section" id="riesgos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">Risks</p>
+      <h2>We know them, and we manage them</h2>
+    </div>
+    <div class="rows reveal">
+      <div><h3>Credit</h3><p>Borrower job loss or death. Mitigated with insurance, diversification and concentration limits.</p></div>
+      <div><h3>Payroll payer</h3><p>Employer delays in remitting collections. Mitigated with per-payer limits and monthly monitoring.</p></div>
+      <div><h3>Originator</h3><p>Servicing failures or weak portfolio quality. Mitigated with due diligence, holdbacks and a backup servicer.</p></div>
+      <div><h3>Regulatory and FX</h3><p>Regulatory or exchange-rate changes in Colombia and Mexico. Detailed in the investment memorandum.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGINADORES -->
+<section class="section" id="originadores">
+  <div class="wrap split">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:18px">
+      <p class="tag">For originators</p>
+      <h2 style="font-size:clamp(38px,4.6vw,64px);line-height:1.02">Originating payroll-deduction loans? Let’s talk</h2>
+      <p style="font-size:19px;color:var(--muted)">Credit unions and originators in Colombia and Mexico that want to lend more without waiting for their portfolio to mature.</p>
+      <ul class="checks">
+        <li>Recurring portfolio purchases, not one-off deals.</li>
+        <li>You can keep servicing collections and your client relationships.</li>
+        <li>Fiduciary structure and standard documentation from the first purchase.</li>
+      </ul>
+    </div>
+    <div class="card card-dawn reveal d1" style="display:flex;flex-direction:column;gap:18px">
+      <h3 style="font-size:32px;line-height:1.08">Let’s build a long-term partnership</h3>
+      <p style="color:var(--muted)">We want to understand your operation and explore how we can grow together. Write to us and we’ll set up a call with our team.</p>
+      <p class="hint"><strong>To move faster, tell us:</strong>Entity and country · Payroll-loan portfolio balance · Main payroll payers · Historical portfolio performance</p>
+      <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination" class="btn btn-light" style="align-self:flex-start">Write to us</a>
+      <p style="font-size:16px;color:var(--muted)">or directly at <strong style="color:var(--snow)">info@finmobilsas.com</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ALIADOS -->
+<section class="section" id="aliados">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">Partners and advisors</p>
+      <h2>We work with names investors already know</h2>
+    </div>
+    <div class="partners">
+      <div class="card partner reveal">
+        <div class="partner-mark"><span class="bc"><img src="../assets/fiduciaria-bancolombia-white.png" alt="" width="30" height="30">Fiduciaria Bancolombia</span></div>
+        <p class="k">Fiduciary</p>
+      </div>
+      <div class="card partner reveal d1">
+        <div class="partner-mark"><img src="../assets/deloitte-white.png" alt="Deloitte" style="height:26px"></div>
+        <p class="k">Audit · Colombia and Mexico</p>
+      </div>
+      <div class="card partner reveal d2">
+        <div class="partner-mark"><img src="../assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:23px"></div>
+        <p class="k">Legal counsel</p>
+      </div>
+      <div class="card partner reveal d3">
+        <div class="partner-mark person"><div class="avatar" aria-hidden="true">AR</div><div><h3>Andrés Rodríguez</h3><p>Business development</p></div></div>
+        <div class="partner-foot">
+          <p class="k">Canada</p>
+          <!-- Pending: replace href="#" with Andrés’s LinkedIn profile URL -->
+          <a class="li-btn" href="#" target="_blank" rel="noopener" aria-label="Andrés Rodríguez on LinkedIn">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="wrap contact">
+    <div class="reveal">
+      <p class="tag" style="margin-bottom:18px">Investors</p>
+      <h2>Request the investment memorandum</h2>
+      <p class="lead">Tell us about your institution. We’ll reach out to schedule a meeting and share the data room.</p>
+    </div>
+    <form class="card form reveal d1" name="inversionistas" method="POST" action="/en/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="inversionistas">
+      <p hidden><label>Do not fill <input name="bot-field"></label></p>
+      <div class="row2">
+        <div class="field notch"><label for="in-nombre">Name</label><input id="in-nombre" class="input" name="nombre" type="text" required autocomplete="name"></div>
+        <div class="field notch"><label for="in-entidad">Institution</label><input id="in-entidad" class="input" name="institucion" type="text" required autocomplete="organization"></div>
+      </div>
+      <div class="field notch"><label for="in-email">Corporate email</label><input id="in-email" class="input" name="correo" type="email" required autocomplete="email"></div>
+      <div class="row2">
+        <div class="field notch"><label for="in-tipo">Investor type</label><select id="in-tipo" class="input" name="tipo_inversionista"><option>Financial institution</option><option>Investment firm</option><option>Family office</option><option>High-net-worth individual</option><option>Private debt fund</option></select></div>
+        <div class="field notch"><label for="in-monto">Indicative amount</label><input id="in-monto" class="input" name="monto_indicativo" type="text" placeholder="e.g. USD 500,000"></div>
+      </div>
+      <label class="check"><input name="declaracion_inversionista" value="si" type="checkbox" required><span>I confirm I am acting on behalf of an institutional, qualified or professional investor.</span></label>
+      <label class="check"><input name="autorizacion_datos" value="si" type="checkbox" required><span>I authorize Finmobil S.A.S. to process my personal data to contact me, in accordance with its <a href="legal.html#privacidad">Privacy and Data Processing Policy</a>.</span></label>
+      <button type="submit" class="btn btn-light">Request information</button>
+      <small>For institutional and professional investors only. Submitting this form is not a commitment to invest.</small>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="big" aria-hidden="true">Finmobil</p>
+    <div class="footer-row">
+      <span>Finmobil S.A.S. · <a href="mailto:info@finmobilsas.com">info@finmobilsas.com</a></span>
+      <nav aria-label="Legal">
+        <a href="legal.html#privacidad">Privacy and data</a>
+        <a href="legal.html#terminos">Terms of use</a>
+        <a href="legal.html#aviso-legal">Legal notice</a>
+      </nav>
+    </div>
+    <p class="legal-note">This website is for information purposes only and is intended exclusively for institutional and professional investors. It does not constitute a public offering of securities, a solicitation of funds from the public, or an investment recommendation in any jurisdiction, including the United States and Canada. Any transaction will be carried out through private documentation and in accordance with applicable regulations. All investments involve risk, including loss of capital. Simulator figures and target returns are illustrative and do not guarantee future results. Finmobil S.A.S. is not supervised by the Financial Superintendence of Colombia or by Mexico’s National Banking and Securities Commission (CNBV). This English version is provided for convenience; in case of any discrepancy, the Spanish version prevails.</p>
+  </div>
+</footer>
+
+<script src="../simulador.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

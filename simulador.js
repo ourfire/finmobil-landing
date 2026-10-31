@@ -30,7 +30,11 @@
   };
   if (!el.amount) return;
 
-  var FREQ_LABEL = { 1: 'Pago mensual', 3: 'Pago trimestral', 6: 'Pago semestral', 0: 'Intereses al vencimiento' };
+  var EN = (document.documentElement.lang || '').slice(0, 2) === 'en';
+  var T = EN
+    ? { freq: { 1: 'Monthly payment', 3: 'Quarterly payment', 6: 'Semiannual payment', 0: 'Interest at maturity' }, month: 'Month ', one: ' payment', many: ' payments', tail: ' · principal at maturity' }
+    : { freq: { 1: 'Pago mensual', 3: 'Pago trimestral', 6: 'Pago semestral', 0: 'Intereses al vencimiento' }, month: 'Mes ', one: ' pago', many: ' pagos', tail: ' · capital al vencimiento' };
+  var FREQ_LABEL = T.freq;
   var freq = 1;
 
   function fmt(n) {
@@ -88,7 +92,7 @@
       count++;
       var row = document.createElement('div');
       row.className = 'row';
-      row.appendChild(cell('Mes ' + next));
+      row.appendChild(cell(T.month + next));
       row.appendChild(cell(fmt(it)));
       row.appendChild(cell(last ? fmt(amount) : '—'));
       row.appendChild(cell(fmt(pay)));
@@ -104,7 +108,7 @@
     el.totInt.textContent = fmt(totalInt);
     el.totCap.textContent = fmt(amount);
     el.totAll.textContent = fmt(amount + totalInt);
-    el.note.textContent = count + (count === 1 ? ' pago' : ' pagos') + ' · capital al vencimiento';
+    el.note.textContent = count + (count === 1 ? T.one : T.many) + T.tail;
     el.wrap.hidden = false;
     el.empty.hidden = true;
   }

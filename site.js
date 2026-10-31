@@ -27,6 +27,13 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
 
+  // Cambio de idioma: conserva la sección actual
+  document.querySelectorAll('a.lang').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash;
+    });
+  });
+
   // Aparición de elementos
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -44,7 +51,12 @@
   }
 
   // Recorrido de pasos
-  var STEPS = [
+  var STEPS = (document.documentElement.lang || '').slice(0, 2) === 'en' ? [
+    { t: 'Funding', p: 'The investor lends to Finmobil through a private debt instrument with a set rate, term and payment schedule.' },
+    { t: 'Portfolio purchase', p: 'We use that capital to buy payroll-deduction loan portfolios that meet our eligibility criteria, after due diligence on the originator.' },
+    { t: 'Collection', p: 'Payroll offices deduct installments from wages, and the cash flows go into a segregated trust managed by a fiduciary.' },
+    { t: 'Investor payout', p: 'Interest and principal are paid on the agreed schedule, with periodic reports on portfolio performance.' }
+  ] : [
     { t: 'Fondeo', p: 'El inversionista presta a Finmobil mediante un instrumento de deuda privada, con tasa, plazo y calendario de pagos definidos.' },
     { t: 'Compra de cartera', p: 'Con ese capital compramos cartera de libranza que cumple criterios de elegibilidad, tras due diligence del originador.' },
     { t: 'Recaudo', p: 'Las pagadurías descuentan las cuotas de nómina y los flujos llegan a un patrimonio autónomo administrado por una fiduciaria.' },
