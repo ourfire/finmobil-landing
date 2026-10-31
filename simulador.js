@@ -34,7 +34,7 @@
 
   function fmt(n) {
     var c = el.currency.value;
-    var locale = c === 'COP' ? 'es-CO' : (c === 'MXN' ? 'es-MX' : 'en-US');
+    var locale = 'en-US'; // separador de miles con coma en todas las monedas
     try {
       return new Intl.NumberFormat(locale, {
         style: 'currency', currency: c, maximumFractionDigits: c === 'COP' ? 0 : 2
@@ -51,7 +51,7 @@
   }
 
   function render() {
-    var amount = parseFloat(el.amount.value);
+    var amount = parseAmount(el.amount.value);
     var rate = parseFloat(el.rate.value);
     var term = parseInt(el.term.value, 10);
     var outOfRange = rate > 0 && (rate < MIN_RATE || rate > MAX_RATE);
@@ -116,6 +116,21 @@
     el.rate.value = el.rateRange.value;
     render();
   });
+  // Monto con separador de miles (coma) mientras se escribe
+  function parseAmount(v) { return parseFloat(String(v).replace(/[^\d]/g, '')); }
+  function groupDigits(d) { return d.replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  el.amount.addEventListener('input', function () {
+    var raw = el.amount.value;
+    var caret = el.amount.selectionStart || raw.length;
+    var digitsBefore = raw.slice(0, caret).replace(/[^\d]/g, '').length;
+    var digits = raw.replace(/[^\d]/g, '').replace(/^0+(?=\d)/, '').slice(0, 15);
+    var formatted = groupDigits(digits);
+    el.amount.value = formatted;
+    var pos = 0, seen = 0;
+    while (pos < formatted.length && seen < digitsBefore) { if (/\d/.test(formatted[pos])) seen++; pos++; }
+    try { el.amount.setSelectionRange(pos, pos); } catch (e) {}
+  });
+
   [el.amount, el.term, el.currency].forEach(function (input) {
     input.addEventListener('input', render);
     input.addEventListener('change', render);
