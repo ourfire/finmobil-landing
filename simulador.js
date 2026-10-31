@@ -25,7 +25,8 @@
     empty: $('sched-empty'),
     totInt: $('tot-int'),
     totCap: $('tot-cap'),
-    totAll: $('tot-all')
+    totAll: $('tot-all'),
+    curLabel: $('amount-cur')
   };
   if (!el.amount) return;
 
@@ -60,6 +61,7 @@
     el.rate.classList.toggle('err', outOfRange);
     el.rate.setAttribute('aria-invalid', outOfRange ? 'true' : 'false');
     el.perLabel.textContent = FREQ_LABEL[freq];
+    if (el.curLabel) el.curLabel.textContent = el.currency.value;
 
     var ok = amount > 0 && rate > 0 && !outOfRange && term > 0;
     el.rows.textContent = '';

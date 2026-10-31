@@ -31,7 +31,16 @@
       <a href="#originadores">Originadores</a>
       <a href="#aliados">Aliados</a>
       <a href="#contacto" class="btn btn-ink">Contactar</a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span></button>
     </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#tesis">Tesis</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#estructura">Estructura</a>
+    <a href="#simulador">Simulador</a>
+    <a href="#originadores">Originadores</a>
+    <a href="#aliados">Aliados</a>
   </div>
 </header>
 
@@ -126,8 +135,8 @@
 
 <!-- ESTRUCTURA -->
 <section class="section on-blue" id="estructura">
-  <div class="orb blur-sm float-a" aria-hidden="true" style="width:90px;height:90px;right:12%;top:150px"></div>
-  <div class="orb blur-sm float-b" aria-hidden="true" style="width:64px;height:64px;right:26%;top:260px"></div>
+  <div class="hide-sm orb blur-sm float-a" aria-hidden="true" style="width:90px;height:90px;right:12%;top:150px"></div>
+  <div class="hide-sm orb blur-sm float-b" aria-hidden="true" style="width:64px;height:64px;right:26%;top:260px"></div>
   <div class="orb blur-lg float-b" aria-hidden="true" style="width:360px;height:360px;right:-100px;bottom:-120px"></div>
   <div class="wrap">
     <div class="section-head reveal">
@@ -181,11 +190,21 @@
       <p>Ingresa monto, tasa y plazo para ver cuánto recibirías en cada pago.</p>
     </div>
     <div class="sim reveal">
+      <div class="viewer">
+        <div class="orb blur-md" aria-hidden="true"></div>
+        <div class="viewer-amount">
+          <label for="sim-monto" class="k">Monto a invertir</label>
+          <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
+        </div>
+        <div class="viewer-out" aria-live="polite">
+          <div><p class="k" id="out-per-label">Pago mensual</p><p class="v" id="out-per">—</p></div>
+          <div><p class="k">Intereses totales</p><p class="v accent" id="out-int">—</p></div>
+          <div><p class="k">Total a recibir</p><p class="v" id="out-total">—</p></div>
+        </div>
+      </div>
       <div class="card sim-form">
         <div class="field"><label for="sim-moneda">Moneda</label>
           <select id="sim-moneda" class="input"><option value="USD">USD · Dólar</option><option value="COP">COP · Peso colombiano</option><option value="MXN">MXN · Peso mexicano</option></select></div>
-        <div class="field"><label for="sim-monto">Monto a invertir</label>
-          <input id="sim-monto" class="input" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
         <div class="field"><label for="sim-tasa">Tasa anual (%) · entre 6% y 24%</label>
           <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="Entre 6 y 24" aria-describedby="sim-tasa-aviso">
           <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="6" aria-label="Tasa anual, deslizador">
@@ -201,22 +220,14 @@
             <button type="button" class="freq" data-f="0" aria-pressed="false">Al vencimiento</button>
           </div></div>
       </div>
-      <div class="sim-out">
-        <div class="results" aria-live="polite">
-          <div class="orb blur-md" aria-hidden="true"></div>
-          <div><p class="k" id="out-per-label">Pago mensual</p><p class="v" id="out-per">—</p></div>
-          <div><p class="k">Intereses totales</p><p class="v accent" id="out-int">—</p></div>
-          <div><p class="k">Total a recibir</p><p class="v" id="out-total">—</p></div>
+      <div class="schedule">
+        <div class="schedule-head"><h3>Calendario de pagos</h3><span id="out-note"></span></div>
+        <div id="sched-wrap" hidden>
+          <div class="row-head"><span>Pago</span><span>Intereses</span><span>Capital</span><span>Pago del mes</span><span>Acumulado</span></div>
+          <div id="sched-rows"></div>
+          <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
         </div>
-        <div class="schedule">
-          <div class="schedule-head"><h3>Calendario de pagos</h3><span id="out-note"></span></div>
-          <div id="sched-wrap" hidden>
-            <div class="row-head"><span>Pago</span><span>Intereses</span><span>Capital</span><span>Pago del mes</span><span>Acumulado</span></div>
-            <div id="sched-rows"></div>
-            <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
-          </div>
-          <p id="sched-empty" style="padding:24px 0;color:var(--muted)">Ingresa el monto y la tasa para ver el calendario.</p>
-        </div>
+        <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Ingresa el monto y la tasa para ver el calendario.</p>
       </div>
     </div>
     <p class="disclaimer">Simulación ilustrativa con interés simple sobre el capital, antes de impuestos y retenciones. No constituye una oferta ni garantiza rendimientos; los términos definitivos dependen de la documentación de cada operación.</p>
@@ -241,7 +252,7 @@
 
 <!-- ORIGINADORES -->
 <section class="section on-blue on-plum" id="originadores">
-  <div class="capsule blur-md float-a" aria-hidden="true" style="width:150px;height:330px;left:-40px;top:60px;transform:rotate(-14deg)"></div>
+  <div class="hide-sm capsule blur-md float-a" aria-hidden="true" style="width:150px;height:330px;left:-40px;top:60px;transform:rotate(-14deg)"></div>
   <div class="wrap split">
     <div class="reveal" style="display:flex;flex-direction:column;gap:20px;position:relative;z-index:1">
       <p class="tag">Para originadores</p>
