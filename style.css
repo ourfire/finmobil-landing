@@ -457,3 +457,8 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
 .tip[hidden] { display: none; }
 .tip strong { display: block; color: var(--snow); font-family: var(--display); font-size: 18px; margin-bottom: 4px; }
 @media (max-width: 640px) { .hero-cta .btn { padding: 0 14px; white-space: nowrap; } }
+/* Logos sin deformación: no estirar en el contenedor flex */
+.proof > div { align-items: flex-start; }
+.proof img { flex: none; align-self: flex-start; object-fit: contain; }
+@media (max-width: 640px) { .proof > div { align-items: center; } .proof img { align-self: center; } }
+.proof > div > img { margin: 3px 0; } /* centra los logos con la altura del de Bancolombia (26px) */
