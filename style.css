@@ -394,3 +394,66 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
 /* Aliados (3) y equipo regional (4) */
 .partners.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 860px) { .partners.trio { grid-template-columns: 1fr; } .partners.trio .partner { min-height: 0; } }
+
+/* ---------- Estructura en 7 bloques ---------- */
+/* Hero: llamadas a la acción y franja de aliados */
+.hero { padding-bottom: 40px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 56px; }
+.proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 900px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.proof > div { display: flex; flex-direction: column; justify-content: space-between; gap: 14px; padding: 20px 22px; min-width: 0; }
+.proof > div + div { border-left: 1px solid var(--line); }
+.proof img { width: auto; max-width: 100%; }
+.proof .bc { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.1; }
+.proof .bc img { width: 26px; height: 26px; flex: none; }
+@media (max-width: 640px) {
+  .hero-cta .btn { flex: 1 1 140px; }
+  .proof { grid-template-columns: 1fr; }
+  .proof > div { flex-direction: row; align-items: center; padding: 16px 18px; }
+  .proof > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .proof .bc { font-size: 17px; }
+}
+
+/* Subtítulos dentro de una sección */
+.sub-head { display: flex; flex-direction: column; gap: 14px; margin: 72px 0 28px; }
+.sub-head h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; }
+.h-xl { font-size: clamp(38px, 4.6vw, 64px); line-height: 1.02; }
+.lead-m { font-size: 19px; color: var(--muted); }
+.btn-wrap { white-space: normal; text-align: left; line-height: 1.2; padding-top: 12px; padding-bottom: 12px; }
+
+/* Riesgo → mitigante */
+.rm { display: grid; gap: 8px; }
+.rm p { color: var(--muted); }
+.rm .k { display: inline-block; min-width: 92px; margin-right: 10px; color: var(--peach); }
+
+/* Inversionistas: términos + simulador + calendario */
+.inv-grid { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr); grid-template-areas: "sim terms"; gap: 18px; align-items: start; }
+.inv-grid > .terms { grid-area: terms; position: sticky; top: 96px; display: flex; flex-direction: column; }
+.inv-grid > .sim-block { grid-area: sim; display: grid; gap: 18px; }
+.terms > h3 { font-size: 24px; margin-bottom: 10px; }
+.terms > .btn { margin-top: 20px; }
+.sim-title { font-size: clamp(28px, 2.6vw, 36px); }
+.sim-block .amount { margin-top: 22px; }
+@media (max-width: 980px) {
+  .inv-grid { grid-template-columns: 1fr; grid-template-areas: "terms" "sim"; }
+  .inv-grid > .terms { position: static; }
+}
+
+/* Definiciones (ⓘ) */
+.info {
+  display: inline-grid; place-items: center; width: 18px; height: 18px; padding: 0; margin: 0 1px; vertical-align: 2px;
+  border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; color: var(--snow);
+  font: italic 600 11px/1 Georgia, "Times New Roman", serif; cursor: pointer; transition: background .2s, border-color .2s;
+  position: relative;
+}
+.info::after { content: ""; position: absolute; inset: -12px; } /* área táctil de 42px */
+.info:hover, .info[aria-expanded="true"] { background: var(--snow); color: var(--night); border-color: var(--snow); }
+.rows h3 .info { vertical-align: 4px; }
+.tip {
+  position: fixed; z-index: 80; max-width: min(340px, calc(100vw - 24px)); padding: 14px 16px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius); background: rgba(30, 36, 64, .96);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 18px 50px rgba(10, 12, 30, .5);
+  font-size: 15px; line-height: 1.5; color: var(--muted); animation: fadeUp .25s var(--ease);
+}
+.tip[hidden] { display: none; }
+.tip strong { display: block; color: var(--snow); font-family: var(--display); font-size: 18px; margin-bottom: 4px; }
+@media (max-width: 640px) { .hero-cta .btn { padding: 0 14px; white-space: nowrap; } }

@@ -98,13 +98,61 @@
         try { sessionStorage.setItem(GATE_KEY, '1'); } catch (e) {}
         unlockAll();
         var input = document.getElementById('sim-monto');
-        if (input && el.id === 'inversionistas-visor') input.focus({ preventScroll: true });
+        if (input && el.contains(input)) input.focus({ preventScroll: true });
       });
       box.appendChild(tag); box.appendChild(h); box.appendChild(label); box.appendChild(btn);
       gate.appendChild(box);
       el.appendChild(gate);
     });
   }
+
+  // Definiciones (ⓘ): un solo globo que se posiciona junto al botón
+  var tip = document.createElement('div');
+  tip.className = 'tip'; tip.id = 'tip'; tip.setAttribute('role', 'tooltip'); tip.hidden = true;
+  document.body.appendChild(tip);
+  var tipBtn = null;
+  function placeTip(btn) {
+    var r = btn.getBoundingClientRect();
+    var w = tip.offsetWidth, h = tip.offsetHeight, m = 12;
+    var left = Math.min(Math.max(m, r.left + r.width / 2 - w / 2), window.innerWidth - w - m);
+    var top = r.bottom + 10;
+    if (top + h > window.innerHeight - m) top = Math.max(m, r.top - h - 10);
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+  }
+  function openTip(btn) {
+    if (tipBtn && tipBtn !== btn) tipBtn.setAttribute('aria-expanded', 'false');
+    tipBtn = btn;
+    tip.textContent = '';
+    var t = document.createElement('strong'); t.textContent = btn.getAttribute('data-tip-title');
+    var p = document.createElement('span'); p.textContent = btn.getAttribute('data-tip');
+    tip.appendChild(t); tip.appendChild(p);
+    tip.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-describedby', 'tip');
+    placeTip(btn);
+  }
+  function closeTip() {
+    if (!tipBtn) return;
+    tipBtn.setAttribute('aria-expanded', 'false');
+    tipBtn.removeAttribute('aria-describedby');
+    tipBtn = null; tip.hidden = true;
+  }
+  var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  document.querySelectorAll('.info').forEach(function (b) {
+    b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (tipBtn === b && !finePointer) closeTip(); else openTip(b);
+    });
+    if (finePointer) {
+      b.addEventListener('mouseenter', function () { openTip(b); });
+      b.addEventListener('mouseleave', function () { closeTip(); });
+    }
+  });
+  document.addEventListener('click', function (e) { if (tipBtn && !tip.contains(e.target)) closeTip(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeTip(); });
+  window.addEventListener('scroll', function () { if (tipBtn) placeTip(tipBtn); }, { passive: true });
+  window.addEventListener('resize', closeTip);
 
   // Recorrido de pasos
   var STEPS = (document.documentElement.lang || '').slice(0, 2) === 'en' ? [

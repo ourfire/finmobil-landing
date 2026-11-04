@@ -28,121 +28,67 @@
       <span>Finmobil</span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#nosotros">About</a>
       <a href="#como-funciona">How it works</a>
       <a href="#inversionistas">Investors</a>
       <a href="#originadores">Originators</a>
+      <a href="#nosotros">About</a>
       <a href="../" class="lang" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
       <a href="#contacto" class="btn btn-line">Contact</a>
       <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
     </nav>
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#nosotros">About</a>
     <a href="#como-funciona">How it works</a>
-    <a href="#estructura">Structure</a>
+    <a href="#protecciones">Protections</a>
+    <a href="#riesgos">Risks</a>
     <a href="#inversionistas">Investors</a>
-    <a href="#simulador">Payment schedule</a>
+    <a href="#simulador">Simulator</a>
     <a href="#originadores">Originators</a>
-    <a href="#aliados">Partners</a>
+    <a href="#nosotros">About</a>
   </div>
 </header>
 
 <main>
 
-<!-- HERO: visor del simulador + originadores -->
+<!-- 1 · HERO -->
 <section class="hero" id="inicio">
   <div class="moon" aria-hidden="true"></div>
   <div class="wrap">
-    <h1>Private credit backed by payroll-deduction loans</h1>
-    <p class="hero-lead">Finmobil acquires portfolios of loans repaid through direct payroll deduction, funded with capital from institutions, investment firms and family offices.</p>
-
-    <div class="hero-grid">
-      <div class="card card-dawn" id="inversionistas-visor" data-gate>
-        <h2>For investors</h2>
-        <p class="sub">Model your investment cash flows.</p>
-
-        <div class="amount">
-          <label for="sim-monto" class="k">Investment amount</label>
-          <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
-        </div>
-
-        <div class="controls">
-          <div class="field notch"><label for="sim-moneda">Currency</label>
-            <select id="sim-moneda" class="input"><option value="USD">USD · Dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option></select></div>
-          <div class="field f-rate">
-            <div class="notch"><label for="sim-tasa">Annual rate · 6% to 24%</label>
-              <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="e.g. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
-            <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Annual rate slider">
-            <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
-            <p id="sim-tasa-aviso" class="warn" role="alert" hidden>The rate must be between 6% and 24% per year.</p>
-          </div>
-          <div class="field notch"><label for="sim-plazo">Term</label>
-            <select id="sim-plazo" class="input"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
-        </div>
-
-        <div id="sim-freq" class="freq-group" role="group" aria-label="Interest payments">
-          <button type="button" class="freq" data-f="1" aria-pressed="true">Monthly</button>
-          <button type="button" class="freq" data-f="3" aria-pressed="false">Quarterly</button>
-          <button type="button" class="freq" data-f="6" aria-pressed="false">Semiannual</button>
-          <button type="button" class="freq" data-f="0" aria-pressed="false">At maturity</button>
-        </div>
-
-        <div class="cells" aria-live="polite">
-          <div><p class="k" id="out-per-label">Monthly payment</p><p class="v" id="out-per">—</p></div>
-          <div><p class="k">Total interest</p><p class="v accent" id="out-int">—</p></div>
-          <div><p class="k">Total received</p><p class="v" id="out-total">—</p></div>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#contacto" class="btn btn-light">Request the memorandum</a>
-          <a href="#simulador" class="link">See payment schedule</a>
-        </div>
-        <p class="note">Illustrative simulation. For institutional and professional investors only.</p>
-      </div>
-
-      <div class="card card-night">
-        <h2>For originators</h2>
-        <p class="sub">Turn your payroll-loan portfolio into liquidity and lend more.</p>
-        <ul>
-          <li>Recurring portfolio purchases</li>
-          <li>You keep servicing collections</li>
-          <li>Fiduciary structure from the first purchase</li>
-        </ul>
-        <p class="mail">Write to us at <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination">info@finmobilsas.com</a></p>
-      </div>
+    <h1>Private debt backed by payroll-deduction loans</h1>
+    <p class="hero-lead">We buy portfolios of loans repaid directly from wages or pensions, and fund them with private debt from institutional and professional investors.</p>
+    <div class="hero-cta">
+      <a href="#inversionistas" class="btn btn-light">I’m an investor</a>
+      <a href="#originadores" class="btn btn-line">I’m an originator</a>
     </div>
-
-    <div class="strip" id="estructura-resumen">
-      <div><p class="tag">Segregated trust</p><h3>Ring-fenced assets</h3><p>Portfolio and collections held off Finmobil’s balance sheet.</p></div>
-      <div><p class="tag">Aligned originator</p><h3>Holdback and repurchase</h3><p>The seller shares the portfolio risk.</p></div>
-      <div><p class="tag">Eligibility</p><h3>Limits per payroll payer</h3><p>Criteria set before every purchase.</p></div>
-      <div><p class="tag">Traceability</p><h3>Tokenized registry</h3><p>Collections and delinquency, loan by loan.</p></div>
+    <div class="proof" id="aliados" aria-label="Partners and advisors">
+      <div><span class="bc"><img src="../assets/fiduciaria-bancolombia-white.png" alt="" width="26" height="26">Fiduciaria Bancolombia</span><p class="k">Fiduciary</p></div>
+      <div><img src="../assets/deloitte-white.png" alt="Deloitte" style="height:20px"><p class="k">Audit · CO and MX</p></div>
+      <div><img src="../assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:18px"><p class="k">Legal counsel</p></div>
     </div>
   </div>
 </section>
 
-<!-- TESIS -->
+<!-- 2 · THESIS -->
 <section class="section" id="tesis">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">The thesis</p>
-      <h2>An asset paid at the source, and short of capital</h2>
+      <h2>An asset paid at the source that is short of capital</h2>
     </div>
     <div class="grid-3 reveal">
-      <article><h3>Paid straight<br>from payroll</h3><p>The employer or payroll office deducts the installment before paying the salary or pension. The borrower doesn’t decide whether to pay this month.</p></article>
-      <article><h3>Stable, granular<br>cash flows</h3><p>Thousands of small loans spread across payroll payers, with low correlation to public markets.</p></article>
-      <article><h3>Originators<br>short of funding</h3><p>Credit unions and originators have loan demand they can’t meet for lack of liquidity. That’s where we buy.</p></article>
+      <article><h3>Paid straight<br>from payroll</h3><p>The payroll payer <button type="button" class="info" aria-label="What is payroll payer?" data-tip-title="Payroll payer" data-tip="The entity that pays wages or pensions (a public or private employer, or a pension fund). It deducts the installment before paying the worker and remits it to the lender. Known as pagaduría in Colombia.">i</button> deducts the installment before paying the wage or pension: the borrower doesn’t decide whether to pay this month. In Colombia this is called libranza <button type="button" class="info" aria-label="What is libranza?" data-tip-title="Libranza" data-tip="The legal name in Colombia for a loan repaid through direct payroll or pension deduction (Law 1527 of 2012). In Mexico it is known as crédito con descuento vía nómina.">i</button>.</p></article>
+      <article><h3>Stable, granular<br>cash flows</h3><p>Thousands of small loans spread across many payroll payers, with low correlation to public markets.</p></article>
+      <article><h3>Originators<br>short of funding</h3><p>Credit unions and originators <button type="button" class="info" aria-label="What is originator?" data-tip-title="Originator" data-tip="A credit union, fintech or financial institution that lends to the worker or pensioner and then sells the loan portfolio.">i</button> have loan demand they can’t meet for lack of liquidity. That’s where we come in: we buy their portfolios.</p></article>
     </div>
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
+<!-- 3 · CÓMO FUNCIONA + PROTECCIONES -->
 <section class="section" id="como-funciona">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">How it works</p>
-      <h2>From capital to portfolio, and back</h2>
+      <h2>From capital to loans, and back</h2>
     </div>
     <div class="flow reveal">
       <div class="flow-visual" aria-hidden="true">
@@ -164,135 +110,137 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ESTRUCTURA -->
-<section class="section" id="estructura">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Structure and protections</p>
-      <h2>Built to protect capital before it earns</h2>
-      <p>Asset segregation, originator alignment and visibility into the underlying asset.</p>
+    <div class="sub-head reveal" id="protecciones">
+      <p class="tag">Protections</p>
+      <h2>How capital is protected</h2>
     </div>
-    <div class="rows reveal">
-      <div><h3>Segregated trust</h3><p>The portfolio and its collections sit in a fiduciary vehicle (patrimonio autónomo), separate from Finmobil’s and the originator’s balance sheets.</p></div>
-      <div><h3>Aligned originator</h3><p>A holdback on part of the purchase price and an obligation to repurchase loans that fail the criteria.</p></div>
-      <div><h3>Eligibility criteria</h3><p>Limits per borrower, payroll payer and originator; loan rate, term and profile set before each purchase.</p></div>
-      <div><h3>Full traceability</h3><p>Tokenized registry of the portfolio, with loan-level reporting on collections, delinquencies and prepayments.</p></div>
+    <div class="rows reveal" id="estructura">
+      <div><h3>Segregated trust <button type="button" class="info" aria-label="What is segregated trust?" data-tip-title="Segregated trust" data-tip="A trust (patrimonio autónomo) managed by a fiduciary. The portfolio and its collections are legally separated from the balance sheets of Finmobil and the originator, so neither one’s creditors can reach those assets.">i</button></h3><p>The portfolio and its collections sit in a trust managed by Fiduciaria Bancolombia, separate from the balance sheets of Finmobil and the originator.</p></div>
+      <div><h3>Holdback and repurchase <button type="button" class="info" aria-label="What is holdback and repurchase?" data-tip-title="Holdback and repurchase" data-tip="Holdback: part of the purchase price is paid to the originator only if the portfolio performs as expected. Repurchase: the originator must buy back loans that fail the agreed criteria.">i</button></h3><p>The originator leaves part of the price as security and buys back loans that fail the criteria. It shares the risk with us.</p></div>
+      <div><h3>Eligibility criteria <button type="button" class="info" aria-label="What is eligibility criteria?" data-tip-title="Eligibility criteria" data-tip="Rules every loan must meet before purchase: rate, term, borrower profile, and concentration limits by borrower, payroll payer and originator.">i</button></h3><p>Before each purchase we set rate, term, borrower profile, and limits by borrower, payroll payer and originator.</p></div>
+      <div><h3>Traceability</h3><p>A loan-by-loan digital record of the portfolio, with periodic reports on collections, delinquencies and prepayments.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CALENDARIO -->
-<section class="section" id="simulador">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Simulator</p>
-      <h2>Payment schedule</h2>
-      <p>Updates with the amount, rate and term you choose above.</p>
-    </div>
-    <div class="card reveal" data-gate>
-      <div class="schedule-head"><h3 id="sched-title">Your investment</h3><span id="out-note"></span></div>
-      <div id="sched-wrap" hidden>
-        <div class="row-head"><span>Period</span><span>Interest</span><span>Principal</span><span>Payment</span><span>Cumulative</span></div>
-        <div id="sched-rows"></div>
-        <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
-      </div>
-      <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Enter the amount and rate to see the schedule.</p>
-    </div>
-    <p class="disclaimer">Illustrative simulation using simple interest on principal, before taxes and withholdings. It is not an offer and does not guarantee returns; final terms depend on each transaction’s documentation.</p>
-  </div>
-</section>
-
-<!-- INVERSIONISTAS -->
-<section class="section" id="inversionistas">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">For investors</p>
-      <h2>Who it’s for</h2>
-    </div>
-    <div class="split">
-      <div class="card reveal" style="display:flex;flex-direction:column;gap:20px">
-        <div class="chips">
-          <span class="pill">Financial institutions</span>
-          <span class="pill">Investment firms</span>
-          <span class="pill">Family offices</span>
-          <span class="pill">High-net-worth investors</span>
-          <span class="pill">Private debt funds</span>
-        </div>
-        <p style="color:var(--muted)">Full terms, the financial model and portfolio history are shared in the investment memorandum and data room, under a non-disclosure agreement.</p>
-      </div>
-      <div class="card terms reveal d1">
-        <h3 style="font-size:24px;margin-bottom:10px">Indicative terms</h3>
-        <div><span>Instrument</span><span>Private debt</span></div>
-        <div><span>Minimum ticket</span><span>Negotiable</span></div>
-        <div><span>Target return</span><span>6% – 24% per year, by transaction</span></div>
-        <div><span>Term</span><span>6 to 60 months</span></div>
-        <div><span>Interest payments</span><span>Monthly, quarterly, semiannual or at maturity</span></div>
-        <div><span>Currency</span><span>COP, MXN or USD</span></div>
-        <small>Indicative terms, subject to final documentation.</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RIESGOS -->
+<!-- 4 · RIESGOS -->
 <section class="section" id="riesgos">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">Risks</p>
-      <h2>We know them, and we manage them</h2>
+      <h2>We know them and we manage them</h2>
     </div>
     <div class="rows reveal">
-      <div><h3>Credit</h3><p>Borrower job loss or death. Mitigated with insurance, diversification and concentration limits.</p></div>
-      <div><h3>Payroll payer</h3><p>Employer delays in remitting collections. Mitigated with per-payer limits and monthly monitoring.</p></div>
-      <div><h3>Originator</h3><p>Servicing failures or weak portfolio quality. Mitigated with due diligence, holdbacks and a backup servicer.</p></div>
-      <div><h3>Regulatory and FX</h3><p>Regulatory or exchange-rate changes in Colombia and Mexico. Detailed in the investment memorandum.</p></div>
+      <div><h3>Credit</h3><div class="rm"><p><span class="k">Risk</span>Borrower job loss or death.</p><p><span class="k">Mitigant</span>Insurance, diversification and concentration limits.</p></div></div>
+      <div><h3>Payroll payer</h3><div class="rm"><p><span class="k">Risk</span>Employer delays in remitting deductions.</p><p><span class="k">Mitigant</span>Limits per payroll payer and monthly monitoring of collections.</p></div></div>
+      <div><h3>Originator</h3><div class="rm"><p><span class="k">Risk</span>Servicing failures or weak portfolio quality.</p><p><span class="k">Mitigant</span>Due diligence, holdback and repurchase, and a backup servicer <button type="button" class="info" aria-label="What is backup servicer?" data-tip-title="Backup servicer" data-tip="An entity ready to take over collection and servicing of the portfolio if the originator stops doing it.">i</button>.</p></div></div>
+      <div><h3>Regulatory and FX</h3><div class="rm"><p><span class="k">Risk</span>Regulatory or exchange-rate changes in Colombia and Mexico.</p><p><span class="k">Mitigant</span>Assessed per transaction and detailed in the investment memorandum <button type="button" class="info" aria-label="What is investment memorandum?" data-tip-title="Investment memorandum" data-tip="A confidential document with the full terms, structure, financial model and risks of each transaction.">i</button>.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ORIGINADORES -->
+<!-- 5 · INVERSIONISTAS: términos + simulador + calendario -->
+<section class="section" id="inversionistas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">For investors</p>
+      <h2>Terms and simulator</h2>
+      <p>Financial institutions, investment firms, family offices, private debt funds and high-net-worth investors.</p>
+    </div>
+    <div class="inv-grid">
+      <aside class="card terms reveal">
+        <h3>Indicative terms</h3>
+        <div><span>Instrument</span><span>Private debt <button type="button" class="info" aria-label="What is private debt?" data-tip-title="Private debt" data-tip="A direct loan from investors to a company, outside public securities markets, with rate, term and payment schedule set by contract.">i</button></span></div>
+        <div><span>Return</span><span>Per transaction</span></div>
+        <div><span>Term</span><span>6 to 60 months</span></div>
+        <div><span>Interest payments</span><span>Monthly, quarterly, semiannual or at maturity</span></div>
+        <div><span>Currency</span><span>COP, MXN or USD</span></div>
+        <small>Indicative. Full terms are shared in the investment memorandum <button type="button" class="info" aria-label="What is investment memorandum?" data-tip-title="Investment memorandum" data-tip="A confidential document with the full terms, structure, financial model and risks of each transaction.">i</button> and the data room <button type="button" class="info" aria-label="What is data room?" data-tip-title="Data room" data-tip="A confidential online repository with the transaction documents: contracts, portfolio history and financial model.">i</button>, under a confidentiality agreement.</small>
+        <a href="#contacto" class="btn btn-light">Request the memorandum</a>
+      </aside>
+      <div class="sim-block" id="simulador" data-gate>
+        <div class="card card-dawn" id="inversionistas-visor">
+          <h3 class="sim-title">Simulate your investment</h3>
+          <div class="amount">
+            <label for="sim-monto" class="k">Investment amount</label>
+            <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
+          </div>
+
+          <div class="controls">
+            <div class="field notch"><label for="sim-moneda">Currency</label>
+              <select id="sim-moneda" class="input"><option value="USD">USD · Dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option></select></div>
+            <div class="field f-rate">
+              <div class="notch"><label for="sim-tasa">Annual rate · 6% to 24%</label>
+                <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="e.g. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
+              <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Annual rate slider">
+              <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
+              <p id="sim-tasa-aviso" class="warn" role="alert" hidden>The rate must be between 6% and 24% per year.</p>
+            </div>
+            <div class="field notch"><label for="sim-plazo">Term</label>
+              <select id="sim-plazo" class="input"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
+          </div>
+
+          <div id="sim-freq" class="freq-group" role="group" aria-label="Interest payments">
+            <button type="button" class="freq" data-f="1" aria-pressed="true">Monthly</button>
+            <button type="button" class="freq" data-f="3" aria-pressed="false">Quarterly</button>
+            <button type="button" class="freq" data-f="6" aria-pressed="false">Semiannual</button>
+            <button type="button" class="freq" data-f="0" aria-pressed="false">At maturity</button>
+          </div>
+
+          <div class="cells" aria-live="polite">
+            <div><p class="k" id="out-per-label">Monthly payment</p><p class="v" id="out-per">—</p></div>
+            <div><p class="k">Total interest</p><p class="v accent" id="out-int">—</p></div>
+            <div><p class="k">Total received</p><p class="v" id="out-total">—</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="schedule-head"><h3 id="sched-title">Payment schedule</h3><span id="out-note"></span></div>
+          <div id="sched-wrap" hidden>
+            <div class="row-head"><span>Payment</span><span>Interest</span><span>Principal</span><span>Payment due</span><span>Cumulative</span></div>
+            <div id="sched-rows"></div>
+            <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
+          </div>
+          <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Enter the amount and rate to see the schedule.</p>
+          <p class="disclaimer">Illustrative simulation using simple interest <button type="button" class="info" aria-label="What is simple interest?" data-tip-title="Simple interest" data-tip="Interest is always calculated on the invested principal and is not reinvested. Principal is repaid in full at maturity.">i</button> on principal, before taxes and withholdings. It is not an offer and does not guarantee returns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · ORIGINATORS -->
 <section class="section" id="originadores">
   <div class="wrap split">
     <div class="reveal" style="display:flex;flex-direction:column;gap:18px">
       <p class="tag">For originators</p>
-      <h2 style="font-size:clamp(38px,4.6vw,64px);line-height:1.02">Originating payroll-deduction loans? Let’s talk</h2>
-      <p style="font-size:19px;color:var(--muted)">Credit unions and originators in Colombia and Mexico that want to lend more without waiting for their portfolio to mature.</p>
+      <h2 class="h-xl">Do you originate payroll-deduction loans? Let’s talk</h2>
+      <p class="lead-m">For credit unions and originators <button type="button" class="info" aria-label="What is originator?" data-tip-title="Originator" data-tip="A credit union, fintech or financial institution that lends to the worker or pensioner and then sells the loan portfolio.">i</button> in Colombia and Mexico that want to lend more without waiting for their portfolio to mature.</p>
       <ul class="checks">
         <li>Recurring portfolio purchases, not one-off deals.</li>
-        <li>You can keep servicing collections and your client relationships.</li>
-        <li>Fiduciary structure and standard documentation from the first purchase.</li>
+        <li><span>You keep servicing collections <button type="button" class="info" aria-label="What is collections?" data-tip-title="Collections" data-tip="The installments that payroll payers deduct from wages and remit each month.">i</button> and your client relationships.</span></li>
+        <li><span>A trust structure <button type="button" class="info" aria-label="What is segregated trust?" data-tip-title="Segregated trust" data-tip="A trust (patrimonio autónomo) managed by a fiduciary. The portfolio and its collections are legally separated from the balance sheets of Finmobil and the originator, so neither one’s creditors can reach those assets.">i</button> and standard documentation from the first purchase.</span></li>
       </ul>
     </div>
     <div class="card card-dawn reveal d1" style="display:flex;flex-direction:column;gap:18px">
       <h3 style="font-size:32px;line-height:1.08">Let’s build a long-term partnership</h3>
-      <p style="color:var(--muted)">We want to understand your operation and explore how we can grow together. Write to us and we’ll set up a call with our team.</p>
-      <p class="hint"><strong>To move faster, tell us:</strong>Entity and country · Payroll-loan portfolio balance · Main payroll payers · Historical portfolio performance</p>
-      <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination" class="btn btn-light" style="align-self:flex-start">Write to us</a>
-      <p style="font-size:16px;color:var(--muted)">or directly at <strong style="color:var(--snow)">info@finmobilsas.com</strong></p>
+      <p class="hint"><strong>To move faster, tell us:</strong>Entity and country · Portfolio balance · Main payroll payers · Historical portfolio performance</p>
+      <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination" class="btn btn-light btn-wrap" style="align-self:flex-start">Email info@finmobilsas.com</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT: who we are + team -->
+<!-- 7 · NOSOTROS -->
 <section class="section" id="nosotros">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">About</p>
       <h2>Who we are</h2>
-      <p>Finmobil S.A.S. is a Colombian company headquartered in Bogotá. We buy payroll-deduction loan portfolios in Colombia and Mexico and fund them with private debt from institutions, investment firms and family offices.</p>
+      <p>Finmobil S.A.S. is a Colombian company headquartered in Bogotá, operating in Colombia and Mexico. Every portfolio purchase is structured with a fiduciary, an independent auditor and international legal counsel.</p>
     </div>
-    <div class="strip about-strip reveal">
-      <div><p class="tag">Headquarters</p><h3>Bogotá, Colombia</h3></div>
-      <div><p class="tag">Markets</p><h3>Colombia and Mexico</h3></div>
-      <div><p class="tag">Business</p><h3>Payroll-loan portfolio purchases</h3></div>
-      <div><p class="tag">Funding</p><h3>Private debt from professional investors</h3></div>
-    </div>
-    <div class="section-head reveal" id="equipo" style="margin-bottom:28px">
+    <div class="sub-head reveal" id="equipo">
       <p class="tag">Team</p>
-      <h2 style="font-size:clamp(30px,3.4vw,44px)">Vision &amp; leadership</h2>
+      <h2>Vision &amp; leadership</h2>
     </div>
     <div class="partners team">
       <div class="card partner reveal">
@@ -317,9 +265,9 @@
         </div>
       </div>
     </div>
-    <div class="section-head reveal" id="desarrollo" style="margin:56px 0 28px">
+    <div class="sub-head reveal" id="desarrollo">
       <p class="tag">Business development</p>
-      <h2 style="font-size:clamp(30px,3.4vw,44px)">Regional team</h2>
+      <h2>Regional team</h2>
     </div>
     <div class="partners regional">
       <div class="card partner reveal">
@@ -358,30 +306,6 @@
   </div>
 </section>
 
-<!-- ALIADOS -->
-<section class="section" id="aliados">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Partners and advisors</p>
-      <h2>We work with names investors already know</h2>
-    </div>
-    <div class="partners trio">
-      <div class="card partner reveal">
-        <div class="partner-mark"><span class="bc"><img src="../assets/fiduciaria-bancolombia-white.png" alt="" width="30" height="30">Fiduciaria Bancolombia</span></div>
-        <p class="k">Fiduciary</p>
-      </div>
-      <div class="card partner reveal d1">
-        <div class="partner-mark"><img src="../assets/deloitte-white.png" alt="Deloitte" style="height:26px"></div>
-        <p class="k">Audit · Colombia and Mexico</p>
-      </div>
-      <div class="card partner reveal d2">
-        <div class="partner-mark"><img src="../assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:23px"></div>
-        <p class="k">Legal counsel</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACTO -->
 <section class="section" id="contacto">
   <div class="wrap contact">
@@ -404,8 +328,8 @@
       </div>
       <label class="check"><input name="declaracion_inversionista" value="si" type="checkbox" required><span>I confirm I am acting on behalf of an institutional, qualified or professional investor.</span></label>
       <label class="check"><input name="autorizacion_datos" value="si" type="checkbox" required><span>I authorize Finmobil S.A.S. to process my personal data to contact me, in accordance with its <a href="legal.html#privacidad">Privacy and Data Processing Policy</a>.</span></label>
-      <button type="submit" class="btn btn-light">Request information</button>
-      <small>For institutional and professional investors only. Submitting this form is not a commitment to invest.</small>
+      <button type="submit" class="btn btn-light">Request the memorandum</button>
+      <small>Submitting this form is not a commitment to invest.</small>
     </form>
   </div>
 </section>

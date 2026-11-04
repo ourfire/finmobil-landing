@@ -28,101 +28,47 @@
       <span>Finmobil</span>
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#nosotros">Nosotros</a>
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#inversionistas">Inversionistas</a>
       <a href="#originadores">Originadores</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="en/" class="lang" hreflang="en" lang="en" aria-label="English version">EN</a>
       <a href="#contacto" class="btn btn-line">Contactar</a>
       <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span></button>
     </nav>
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#nosotros">Nosotros</a>
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#estructura">Estructura</a>
+    <a href="#protecciones">Protecciones</a>
+    <a href="#riesgos">Riesgos</a>
     <a href="#inversionistas">Inversionistas</a>
-    <a href="#simulador">Calendario de pagos</a>
+    <a href="#simulador">Simulador</a>
     <a href="#originadores">Originadores</a>
-    <a href="#aliados">Aliados</a>
+    <a href="#nosotros">Nosotros</a>
   </div>
 </header>
 
 <main>
 
-<!-- HERO: visor del simulador + originadores -->
+<!-- 1 · HERO -->
 <section class="hero" id="inicio">
   <div class="moon" aria-hidden="true"></div>
   <div class="wrap">
     <h1>Deuda privada respaldada por créditos de nómina</h1>
-    <p class="hero-lead">Finmobil adquiere cartera de créditos que se pagan con descuento directo de nómina, y la financia con capital de instituciones, sociedades de inversión y patrimonios familiares.</p>
-
-    <div class="hero-grid">
-      <div class="card card-dawn" id="inversionistas-visor" data-gate>
-        <h2>Para inversionistas</h2>
-        <p class="sub">Simula los flujos de tu inversión.</p>
-
-        <div class="amount">
-          <label for="sim-monto" class="k">Monto a invertir</label>
-          <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
-        </div>
-
-        <div class="controls">
-          <div class="field notch"><label for="sim-moneda">Moneda</label>
-            <select id="sim-moneda" class="input"><option value="USD">USD · Dólar</option><option value="COP">COP · Peso colombiano</option><option value="MXN">MXN · Peso mexicano</option></select></div>
-          <div class="field f-rate">
-            <div class="notch"><label for="sim-tasa">Tasa anual · 6% a 24%</label>
-              <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="Ej. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
-            <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Tasa anual, deslizador">
-            <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
-            <p id="sim-tasa-aviso" class="warn" role="alert" hidden>La tasa debe estar entre 6% y 24% anual.</p>
-          </div>
-          <div class="field notch"><label for="sim-plazo">Plazo</label>
-            <select id="sim-plazo" class="input"><option value="6">6 meses</option><option value="12" selected>12 meses</option><option value="18">18 meses</option><option value="24">24 meses</option><option value="36">36 meses</option><option value="48">48 meses</option><option value="60">60 meses</option></select></div>
-        </div>
-
-        <div id="sim-freq" class="freq-group" role="group" aria-label="Pago de intereses">
-          <button type="button" class="freq" data-f="1" aria-pressed="true">Mensual</button>
-          <button type="button" class="freq" data-f="3" aria-pressed="false">Trimestral</button>
-          <button type="button" class="freq" data-f="6" aria-pressed="false">Semestral</button>
-          <button type="button" class="freq" data-f="0" aria-pressed="false">Al vencimiento</button>
-        </div>
-
-        <div class="cells" aria-live="polite">
-          <div><p class="k" id="out-per-label">Pago mensual</p><p class="v" id="out-per">—</p></div>
-          <div><p class="k">Intereses totales</p><p class="v accent" id="out-int">—</p></div>
-          <div><p class="k">Total a recibir</p><p class="v" id="out-total">—</p></div>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#contacto" class="btn btn-light">Solicitar memorando</a>
-          <a href="#simulador" class="link">Ver calendario de pagos</a>
-        </div>
-        <p class="note">Simulación ilustrativa. Dirigido exclusivamente a inversionistas institucionales y profesionales.</p>
-      </div>
-
-      <div class="card card-night">
-        <h2>Para originadores</h2>
-        <p class="sub">Convierte tu cartera de créditos de nómina en liquidez y coloca más crédito.</p>
-        <ul>
-          <li>Compras recurrentes de cartera</li>
-          <li>Tú sigues administrando el recaudo</li>
-          <li>Estructura fiduciaria desde la primera compra</li>
-        </ul>
-        <p class="mail">Escríbenos a <a href="mailto:info@finmobilsas.com?subject=Alianza%20con%20Finmobil%20-%20Originaci%C3%B3n%20de%20cr%C3%A9ditos%20de%20n%C3%B3mina">info@finmobilsas.com</a></p>
-      </div>
+    <p class="hero-lead">Compramos cartera de créditos que se pagan directamente de la nómina o la pensión, y la financiamos con deuda privada de inversionistas institucionales y profesionales.</p>
+    <div class="hero-cta">
+      <a href="#inversionistas" class="btn btn-light">Soy inversionista</a>
+      <a href="#originadores" class="btn btn-line">Soy originador</a>
     </div>
-
-    <div class="strip" id="estructura-resumen">
-      <div><p class="tag">Patrimonio autónomo</p><h3>Activos separados</h3><p>Cartera y recaudo fuera del balance de Finmobil.</p></div>
-      <div><p class="tag">Originador alineado</p><h3>Retención y recompra</h3><p>El vendedor comparte el riesgo de la cartera.</p></div>
-      <div><p class="tag">Elegibilidad</p><h3>Límites por pagaduría</h3><p>Criterios definidos antes de cada compra.</p></div>
-      <div><p class="tag">Trazabilidad</p><h3>Registro tokenizado</h3><p>Recaudo y mora, crédito por crédito.</p></div>
+    <div class="proof" id="aliados" aria-label="Aliados y asesores">
+      <div><span class="bc"><img src="assets/fiduciaria-bancolombia-white.png" alt="" width="26" height="26">Fiduciaria Bancolombia</span><p class="k">Fiduciaria</p></div>
+      <div><img src="assets/deloitte-white.png" alt="Deloitte" style="height:20px"><p class="k">Auditoría · CO y MX</p></div>
+      <div><img src="assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:18px"><p class="k">Asesoría legal</p></div>
     </div>
   </div>
 </section>
 
-<!-- TESIS -->
+<!-- 2 · TESIS -->
 <section class="section" id="tesis">
   <div class="wrap">
     <div class="section-head reveal">
@@ -130,14 +76,14 @@
       <h2>Un activo que se paga desde la fuente y al que le falta capital</h2>
     </div>
     <div class="grid-3 reveal">
-      <article><h3>Pago desde<br>la nómina</h3><p>La cuota la descuenta el empleador o la pagaduría antes de pagar el salario o la pensión. El deudor no decide si paga este mes.</p></article>
-      <article><h3>Flujos estables<br>y atomizados</h3><p>Miles de créditos pequeños, repartidos entre pagadurías, con baja correlación frente a los mercados públicos.</p></article>
-      <article><h3>Originadores<br>sin fondeo</h3><p>Cooperativas y originadores tienen demanda de crédito que no pueden atender por falta de liquidez. Ahí compramos.</p></article>
+      <article><h3>Pago desde<br>la nómina</h3><p>La pagaduría <button type="button" class="info" aria-label="¿Qué es pagaduría?" data-tip-title="Pagaduría" data-tip="Entidad que paga la nómina o la pensión (un empleador público o privado, o un fondo de pensiones). Descuenta la cuota antes de pagar al trabajador y la transfiere al acreedor. En México: dependencia o entidad pagadora.">i</button> descuenta la cuota antes de pagar el salario o la pensión: el deudor no decide si paga este mes. En Colombia se llama libranza <button type="button" class="info" aria-label="¿Qué es libranza?" data-tip-title="Libranza" data-tip="Nombre legal en Colombia del crédito que se paga con descuento directo de la nómina o la pensión (Ley 1527 de 2012). En México se conoce como crédito con descuento vía nómina.">i</button>.</p></article>
+      <article><h3>Flujos estables<br>y atomizados</h3><p>Miles de créditos pequeños, repartidos entre muchas pagadurías, con baja correlación frente a los mercados públicos.</p></article>
+      <article><h3>Originadores<br>sin fondeo</h3><p>Cooperativas y originadores <button type="button" class="info" aria-label="¿Qué es originador?" data-tip-title="Originador" data-tip="Cooperativa, fintech o entidad financiera que otorga el crédito al trabajador o pensionado y después vende esa cartera.">i</button> tienen demanda de crédito que no pueden atender por falta de liquidez. Ahí entramos: les compramos la cartera.</p></article>
     </div>
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
+<!-- 3 · CÓMO FUNCIONA + PROTECCIONES -->
 <section class="section" id="como-funciona">
   <div class="wrap">
     <div class="section-head reveal">
@@ -164,80 +110,21 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ESTRUCTURA -->
-<section class="section" id="estructura">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Estructura y protecciones</p>
-      <h2>Diseñada para que el capital esté protegido antes de rendir</h2>
-      <p>Separación de activos, alineación con el originador y visibilidad del activo subyacente.</p>
+    <div class="sub-head reveal" id="protecciones">
+      <p class="tag">Protecciones</p>
+      <h2>Cómo se protege el capital</h2>
     </div>
-    <div class="rows reveal">
-      <div><h3>Patrimonio autónomo</h3><p>La cartera y su recaudo quedan en un vehículo fiduciario, separados del balance de Finmobil y del originador.</p></div>
-      <div><h3>Originador alineado</h3><p>Retención de una parte del precio de compra y obligación de recompra de créditos que no cumplan los criterios.</p></div>
-      <div><h3>Criterios de elegibilidad</h3><p>Límites por deudor, pagaduría y originador; tasa, plazo y perfil del crédito definidos antes de cada compra.</p></div>
-      <div><h3>Trazabilidad total</h3><p>Registro tokenizado de la cartera y reportes de recaudo, mora y prepagos crédito por crédito.</p></div>
+    <div class="rows reveal" id="estructura">
+      <div><h3>Patrimonio autónomo <button type="button" class="info" aria-label="¿Qué es patrimonio autónomo?" data-tip-title="Patrimonio autónomo" data-tip="Fideicomiso administrado por una fiduciaria. La cartera y su recaudo quedan separados legalmente del balance de Finmobil y del originador: si a alguno le va mal, sus acreedores no pueden tocar esos activos.">i</button></h3><p>La cartera y su recaudo quedan en un fideicomiso administrado por Fiduciaria Bancolombia, separados del balance de Finmobil y del originador.</p></div>
+      <div><h3>Retención y recompra <button type="button" class="info" aria-label="¿Qué es retención y recompra?" data-tip-title="Retención y recompra" data-tip="Retención (holdback): parte del precio de compra que se le paga al originador solo si la cartera se comporta como se esperaba. Recompra: obligación del originador de recomprar los créditos que no cumplan los criterios pactados.">i</button></h3><p>El originador deja una parte del precio en garantía y recompra los créditos que no cumplan los criterios. Comparte el riesgo con nosotros.</p></div>
+      <div><h3>Criterios de elegibilidad <button type="button" class="info" aria-label="¿Qué es criterios de elegibilidad?" data-tip-title="Criterios de elegibilidad" data-tip="Reglas que debe cumplir cada crédito para poder comprarse: tasa, plazo, perfil del deudor y límites de concentración por deudor, pagaduría y originador.">i</button></h3><p>Antes de cada compra fijamos tasa, plazo, perfil del deudor y límites por deudor, pagaduría y originador.</p></div>
+      <div><h3>Trazabilidad</h3><p>Registro digital de la cartera crédito por crédito, con reportes periódicos de recaudo, mora y prepagos.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CALENDARIO -->
-<section class="section" id="simulador">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Simulador</p>
-      <h2>Calendario de pagos</h2>
-      <p>Se actualiza con el monto, la tasa y el plazo que elijas arriba.</p>
-    </div>
-    <div class="card reveal" data-gate>
-      <div class="schedule-head"><h3 id="sched-title">Tu inversión</h3><span id="out-note"></span></div>
-      <div id="sched-wrap" hidden>
-        <div class="row-head"><span>Pago</span><span>Intereses</span><span>Capital</span><span>Pago del mes</span><span>Acumulado</span></div>
-        <div id="sched-rows"></div>
-        <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
-      </div>
-      <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Ingresa el monto y la tasa para ver el calendario.</p>
-    </div>
-    <p class="disclaimer">Simulación ilustrativa con interés simple sobre el capital, antes de impuestos y retenciones. No constituye una oferta ni garantiza rendimientos; los términos definitivos dependen de la documentación de cada operación.</p>
-  </div>
-</section>
-
-<!-- INVERSIONISTAS -->
-<section class="section" id="inversionistas">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Para inversionistas</p>
-      <h2>Para quién es</h2>
-    </div>
-    <div class="split">
-      <div class="card reveal" style="display:flex;flex-direction:column;gap:20px">
-        <div class="chips">
-          <span class="pill">Instituciones financieras</span>
-          <span class="pill">Sociedades de inversión</span>
-          <span class="pill">Family offices</span>
-          <span class="pill">Inversionistas de alto patrimonio</span>
-          <span class="pill">Fondos de deuda privada</span>
-        </div>
-        <p style="color:var(--muted)">Los términos completos, el modelo financiero y el historial de la cartera se comparten en el memorando de inversión y el data room, previo acuerdo de confidencialidad.</p>
-      </div>
-      <div class="card terms reveal d1">
-        <h3 style="font-size:24px;margin-bottom:10px">Términos indicativos</h3>
-        <div><span>Instrumento</span><span>Deuda privada</span></div>
-        <div><span>Ticket mínimo</span><span>A convenir</span></div>
-        <div><span>Rendimiento objetivo</span><span>6% – 24% anual, según operación</span></div>
-        <div><span>Plazo</span><span>6 a 60 meses</span></div>
-        <div><span>Pago de intereses</span><span>Mensual, trimestral, semestral o al vencimiento</span></div>
-        <div><span>Moneda</span><span>COP, MXN o USD</span></div>
-        <small>Términos indicativos sujetos a la documentación definitiva.</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RIESGOS -->
+<!-- 4 · RIESGOS -->
 <section class="section" id="riesgos">
   <div class="wrap">
     <div class="section-head reveal">
@@ -245,54 +132,115 @@
       <h2>Los conocemos y los gestionamos</h2>
     </div>
     <div class="rows reveal">
-      <div><h3>Crédito</h3><p>Pérdida de empleo o fallecimiento del deudor. Mitigado con seguros, diversificación y límites de concentración.</p></div>
-      <div><h3>Pagaduría</h3><p>Retrasos del empleador en girar el recaudo. Mitigado con límites por pagaduría y monitoreo mensual.</p></div>
-      <div><h3>Originador</h3><p>Fallas en la administración o en la calidad de la cartera. Mitigado con due diligence, retención y administrador de respaldo.</p></div>
-      <div><h3>Regulatorio y cambiario</h3><p>Cambios normativos o de tipo de cambio en Colombia y México. Detallados en el memorando de inversión.</p></div>
+      <div><h3>Crédito</h3><div class="rm"><p><span class="k">Riesgo</span>Pérdida de empleo o fallecimiento del deudor.</p><p><span class="k">Mitigante</span>Seguros, diversificación y límites de concentración.</p></div></div>
+      <div><h3>Pagaduría</h3><div class="rm"><p><span class="k">Riesgo</span>Retrasos del empleador al transferir lo descontado.</p><p><span class="k">Mitigante</span>Límites por pagaduría y monitoreo mensual del recaudo.</p></div></div>
+      <div><h3>Originador</h3><div class="rm"><p><span class="k">Riesgo</span>Fallas en la administración o en la calidad de la cartera.</p><p><span class="k">Mitigante</span>Due diligence, retención y recompra, y administrador de respaldo <button type="button" class="info" aria-label="¿Qué es administrador de respaldo?" data-tip-title="Administrador de respaldo" data-tip="Backup servicer: entidad lista para asumir el cobro y la administración de la cartera si el originador deja de hacerlo.">i</button>.</p></div></div>
+      <div><h3>Regulatorio y cambiario</h3><div class="rm"><p><span class="k">Riesgo</span>Cambios normativos o de tipo de cambio en Colombia y México.</p><p><span class="k">Mitigante</span>Análisis por operación, detallado en el memorando de inversión <button type="button" class="info" aria-label="¿Qué es memorando de inversión?" data-tip-title="Memorando de inversión" data-tip="Documento confidencial con los términos completos, la estructura, el modelo financiero y los riesgos de cada operación.">i</button>.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ORIGINADORES -->
+<!-- 5 · INVERSIONISTAS: términos + simulador + calendario -->
+<section class="section" id="inversionistas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="tag">Para inversionistas</p>
+      <h2>Términos y simulador</h2>
+      <p>Instituciones financieras, sociedades de inversión, family offices, fondos de deuda privada e inversionistas de alto patrimonio.</p>
+    </div>
+    <div class="inv-grid">
+      <aside class="card terms reveal">
+        <h3>Términos indicativos</h3>
+        <div><span>Instrumento</span><span>Deuda privada <button type="button" class="info" aria-label="¿Qué es deuda privada?" data-tip-title="Deuda privada" data-tip="Préstamo directo de inversionistas a una compañía, fuera del mercado público de valores, con tasa, plazo y calendario de pagos pactados por contrato.">i</button></span></div>
+        <div><span>Rendimiento</span><span>Según operación</span></div>
+        <div><span>Plazo</span><span>6 a 60 meses</span></div>
+        <div><span>Pago de intereses</span><span>Mensual, trimestral, semestral o al vencimiento</span></div>
+        <div><span>Moneda</span><span>COP, MXN o USD</span></div>
+        <small>Indicativos. Los términos completos se comparten en el memorando de inversión <button type="button" class="info" aria-label="¿Qué es memorando de inversión?" data-tip-title="Memorando de inversión" data-tip="Documento confidencial con los términos completos, la estructura, el modelo financiero y los riesgos de cada operación.">i</button> y el data room <button type="button" class="info" aria-label="¿Qué es data room?" data-tip-title="Data room" data-tip="Repositorio digital confidencial con la documentación de la operación: contratos, historial de la cartera y modelo financiero.">i</button>, previo acuerdo de confidencialidad.</small>
+        <a href="#contacto" class="btn btn-light">Solicitar memorando</a>
+      </aside>
+      <div class="sim-block" id="simulador" data-gate>
+        <div class="card card-dawn" id="inversionistas-visor">
+          <h3 class="sim-title">Simula tu inversión</h3>
+          <div class="amount">
+            <label for="sim-monto" class="k">Monto a invertir</label>
+            <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
+          </div>
+
+          <div class="controls">
+            <div class="field notch"><label for="sim-moneda">Moneda</label>
+              <select id="sim-moneda" class="input"><option value="USD">USD · Dólar</option><option value="COP">COP · Peso colombiano</option><option value="MXN">MXN · Peso mexicano</option></select></div>
+            <div class="field f-rate">
+              <div class="notch"><label for="sim-tasa">Tasa anual · 6% a 24%</label>
+                <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="Ej. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
+              <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Tasa anual, deslizador">
+              <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
+              <p id="sim-tasa-aviso" class="warn" role="alert" hidden>La tasa debe estar entre 6% y 24% anual.</p>
+            </div>
+            <div class="field notch"><label for="sim-plazo">Plazo</label>
+              <select id="sim-plazo" class="input"><option value="6">6 meses</option><option value="12" selected>12 meses</option><option value="18">18 meses</option><option value="24">24 meses</option><option value="36">36 meses</option><option value="48">48 meses</option><option value="60">60 meses</option></select></div>
+          </div>
+
+          <div id="sim-freq" class="freq-group" role="group" aria-label="Pago de intereses">
+            <button type="button" class="freq" data-f="1" aria-pressed="true">Mensual</button>
+            <button type="button" class="freq" data-f="3" aria-pressed="false">Trimestral</button>
+            <button type="button" class="freq" data-f="6" aria-pressed="false">Semestral</button>
+            <button type="button" class="freq" data-f="0" aria-pressed="false">Al vencimiento</button>
+          </div>
+
+          <div class="cells" aria-live="polite">
+            <div><p class="k" id="out-per-label">Pago mensual</p><p class="v" id="out-per">—</p></div>
+            <div><p class="k">Intereses totales</p><p class="v accent" id="out-int">—</p></div>
+            <div><p class="k">Total a recibir</p><p class="v" id="out-total">—</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="schedule-head"><h3 id="sched-title">Calendario de pagos</h3><span id="out-note"></span></div>
+          <div id="sched-wrap" hidden>
+            <div class="row-head"><span>Pago</span><span>Intereses</span><span>Capital</span><span>Pago del mes</span><span>Acumulado</span></div>
+            <div id="sched-rows"></div>
+            <div class="row-total"><span>Total</span><span id="tot-int"></span><span id="tot-cap"></span><span id="tot-all"></span><span></span></div>
+          </div>
+          <p id="sched-empty" style="padding:20px 0;color:var(--muted)">Ingresa el monto y la tasa para ver el calendario.</p>
+          <p class="disclaimer">Simulación ilustrativa con interés simple <button type="button" class="info" aria-label="¿Qué es interés simple?" data-tip-title="Interés simple" data-tip="Los intereses se calculan siempre sobre el capital invertido, sin reinvertirse. El capital se devuelve completo al vencimiento.">i</button> sobre el capital, antes de impuestos y retenciones. No constituye una oferta ni garantiza rendimientos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · ORIGINADORES -->
 <section class="section" id="originadores">
   <div class="wrap split">
     <div class="reveal" style="display:flex;flex-direction:column;gap:18px">
       <p class="tag">Para originadores</p>
-      <h2 style="font-size:clamp(38px,4.6vw,64px);line-height:1.02">¿Originas créditos con descuento de nómina? Conversemos</h2>
-      <p style="font-size:19px;color:var(--muted)">Cooperativas y originadores en Colombia y México que quieren colocar más crédito sin esperar a que la cartera madure.</p>
+      <h2 class="h-xl">¿Originas créditos con descuento de nómina? Conversemos</h2>
+      <p class="lead-m">Para cooperativas y originadores <button type="button" class="info" aria-label="¿Qué es originador?" data-tip-title="Originador" data-tip="Cooperativa, fintech o entidad financiera que otorga el crédito al trabajador o pensionado y después vende esa cartera.">i</button> en Colombia y México que quieren colocar más crédito sin esperar a que la cartera madure.</p>
       <ul class="checks">
         <li>Compras recurrentes de cartera, no operaciones únicas.</li>
-        <li>Puedes seguir administrando el recaudo y la relación con tus clientes.</li>
-        <li>Estructura fiduciaria y documentación estándar desde la primera compra.</li>
+        <li><span>Sigues administrando el recaudo <button type="button" class="info" aria-label="¿Qué es recaudo?" data-tip-title="Recaudo" data-tip="El dinero de las cuotas que las pagadurías descuentan de la nómina y transfieren cada mes.">i</button> y la relación con tus clientes.</span></li>
+        <li><span>Estructura fiduciaria <button type="button" class="info" aria-label="¿Qué es patrimonio autónomo?" data-tip-title="Patrimonio autónomo" data-tip="Fideicomiso administrado por una fiduciaria. La cartera y su recaudo quedan separados legalmente del balance de Finmobil y del originador: si a alguno le va mal, sus acreedores no pueden tocar esos activos.">i</button> y documentación estándar desde la primera compra.</span></li>
       </ul>
     </div>
     <div class="card card-dawn reveal d1" style="display:flex;flex-direction:column;gap:18px">
       <h3 style="font-size:32px;line-height:1.08">Construyamos una alianza de largo plazo</h3>
-      <p style="color:var(--muted)">Queremos conocer tu operación y explorar cómo podemos crecer juntos. Escríbenos y agendamos una conversación con nuestro equipo.</p>
-      <p class="hint"><strong>Para avanzar más rápido, cuéntanos:</strong>Entidad y país · Saldo de cartera de nómina · Principales pagadurías · Comportamiento histórico de la cartera</p>
-      <a href="mailto:info@finmobilsas.com?subject=Alianza%20con%20Finmobil%20-%20Originaci%C3%B3n%20de%20cr%C3%A9ditos%20de%20n%C3%B3mina" class="btn btn-light" style="align-self:flex-start">Escríbenos</a>
-      <p style="font-size:16px;color:var(--muted)">o directamente a <strong style="color:var(--snow)">info@finmobilsas.com</strong></p>
+      <p class="hint"><strong>Para avanzar más rápido, cuéntanos:</strong>Entidad y país · Saldo de cartera · Principales pagadurías · Comportamiento histórico de la cartera</p>
+      <a href="mailto:info@finmobilsas.com?subject=Alianza%20con%20Finmobil%20-%20Originaci%C3%B3n%20de%20cr%C3%A9ditos%20de%20n%C3%B3mina" class="btn btn-light btn-wrap" style="align-self:flex-start">Escríbenos a info@finmobilsas.com</a>
     </div>
   </div>
 </section>
 
-<!-- NOSOTROS: quiénes somos + equipo -->
+<!-- 7 · NOSOTROS -->
 <section class="section" id="nosotros">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">Nosotros</p>
       <h2>Quiénes somos</h2>
-      <p>Finmobil S.A.S. es una compañía colombiana, con sede en Bogotá, que compra cartera de créditos con descuento de nómina en Colombia y México y la financia con deuda privada de instituciones, sociedades de inversión y patrimonios familiares.</p>
+      <p>Finmobil S.A.S. es una compañía colombiana con sede en Bogotá que opera en Colombia y México. Cada compra de cartera se estructura con una fiduciaria, auditoría independiente y asesoría legal internacional.</p>
     </div>
-    <div class="strip about-strip reveal">
-      <div><p class="tag">Sede</p><h3>Bogotá, Colombia</h3></div>
-      <div><p class="tag">Mercados</p><h3>Colombia y México</h3></div>
-      <div><p class="tag">Actividad</p><h3>Compra de cartera de créditos de nómina</h3></div>
-      <div><p class="tag">Fondeo</p><h3>Deuda privada con inversionistas profesionales</h3></div>
-    </div>
-    <div class="section-head reveal" id="equipo" style="margin-bottom:28px">
+    <div class="sub-head reveal" id="equipo">
       <p class="tag">Equipo</p>
-      <h2 style="font-size:clamp(30px,3.4vw,44px)">Visión y liderazgo</h2>
+      <h2>Visión y liderazgo</h2>
     </div>
     <div class="partners team">
       <div class="card partner reveal">
@@ -317,9 +265,9 @@
         </div>
       </div>
     </div>
-    <div class="section-head reveal" id="desarrollo" style="margin:56px 0 28px">
+    <div class="sub-head reveal" id="desarrollo">
       <p class="tag">Desarrollo de negocios</p>
-      <h2 style="font-size:clamp(30px,3.4vw,44px)">Equipo regional</h2>
+      <h2>Equipo regional</h2>
     </div>
     <div class="partners regional">
       <div class="card partner reveal">
@@ -358,30 +306,6 @@
   </div>
 </section>
 
-<!-- ALIADOS -->
-<section class="section" id="aliados">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Aliados y asesores</p>
-      <h2>Trabajamos con quienes el inversionista ya conoce</h2>
-    </div>
-    <div class="partners trio">
-      <div class="card partner reveal">
-        <div class="partner-mark"><span class="bc"><img src="assets/fiduciaria-bancolombia-white.png" alt="" width="30" height="30">Fiduciaria Bancolombia</span></div>
-        <p class="k">Fiduciaria</p>
-      </div>
-      <div class="card partner reveal d1">
-        <div class="partner-mark"><img src="assets/deloitte-white.png" alt="Deloitte" style="height:26px"></div>
-        <p class="k">Auditoría · Colombia y México</p>
-      </div>
-      <div class="card partner reveal d2">
-        <div class="partner-mark"><img src="assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:23px"></div>
-        <p class="k">Asesoría legal</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACTO -->
 <section class="section" id="contacto">
   <div class="wrap contact">
@@ -404,8 +328,8 @@
       </div>
       <label class="check"><input name="declaracion_inversionista" value="si" type="checkbox" required><span>Declaro que actúo en nombre de un inversionista institucional, calificado o profesional.</span></label>
       <label class="check"><input name="autorizacion_datos" value="si" type="checkbox" required><span>Autorizo a Finmobil S.A.S. a tratar mis datos personales para contactarme, conforme a su <a href="legal.html#privacidad">Política de privacidad y tratamiento de datos</a>.</span></label>
-      <button type="submit" class="btn btn-light">Solicitar información</button>
-      <small>Solo para inversionistas institucionales y profesionales. Enviar este formulario no constituye un compromiso de inversión.</small>
+      <button type="submit" class="btn btn-light">Solicitar memorando</button>
+      <small>Enviar este formulario no constituye un compromiso de inversión.</small>
     </form>
   </div>
 </section>
