@@ -462,3 +462,8 @@ input[type="range"] { width: 100%; accent-color: #FFFFFF; min-height: 22px; marg
 .proof img { flex: none; align-self: flex-start; object-fit: contain; }
 @media (max-width: 640px) { .proof > div { align-items: center; } .proof img { align-self: center; } }
 .proof > div > img { margin: 3px 0; } /* centra los logos con la altura del de Bancolombia (26px) */
+
+/* Energía limpia */
+.badge { display: inline-block; margin-left: 10px; padding: 4px 9px; border: 1px solid rgba(240,183,154,.6); border-radius: 999px; color: var(--peach); font-size: 11px; letter-spacing: .12em; vertical-align: 1px; }
+#energia .tag::before { background: var(--peach); }
+#energia .tag { flex-wrap: wrap; row-gap: 10px; } .badge { white-space: nowrap; margin-left: 4px; }
