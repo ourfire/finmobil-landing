@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Finmobil — Private credit backed by payroll-deduction loans</title>
-<meta name="description" content="Finmobil acquires payroll-deduction loan portfolios in Colombia and Mexico, funded by institutional investors, investment firms and family offices.">
+<meta name="description" content="Fixed-rate private debt for institutional and professional investors, backed by payroll-loan portfolios in Colombia and Mexico and secured by tokenized shares.">
 <meta property="og:title" content="Finmobil — Private credit backed by payroll-deduction loans">
-<meta property="og:description" content="Finmobil acquires payroll-deduction loan portfolios in Colombia and Mexico, funded by institutional investors, investment firms and family offices.">
+<meta property="og:description" content="Fixed-rate private debt for institutional and professional investors, backed by payroll-loan portfolios in Colombia and Mexico and secured by tokenized shares.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#1E2440">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -29,9 +29,8 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#como-funciona">How it works</a>
-      <a href="#inversionistas">Investors</a>
-      <a href="#originadores">Originators</a>
-      <a href="#energia">Energy</a>
+      <a href="#protecciones">Protections</a>
+      <a href="#inversionistas">Terms</a>
       <a href="#nosotros">About</a>
       <a href="../" class="lang" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
       <a href="#contacto" class="btn btn-line">Contact</a>
@@ -42,10 +41,8 @@
     <a href="#como-funciona">How it works</a>
     <a href="#protecciones">Protections</a>
     <a href="#riesgos">Risks</a>
-    <a href="#inversionistas">Investors</a>
+    <a href="#inversionistas">Terms</a>
     <a href="#simulador">Simulator</a>
-    <a href="#originadores">Originators</a>
-    <a href="#energia">Clean energy</a>
     <a href="#nosotros">About</a>
   </div>
 </header>
@@ -57,15 +54,15 @@
   <div class="moon" aria-hidden="true"></div>
   <div class="wrap">
     <h1>Private debt backed by payroll-deduction loans</h1>
-    <p class="hero-lead">We buy portfolios of loans repaid directly from wages or pensions, and fund them with private debt from institutional and professional investors.</p>
+    <p class="hero-lead">You lend to Finmobil at a fixed rate. We use that capital to buy loans repaid straight from payroll, and your loan is secured by tokenized shares of the company that is the beneficiary of that portfolio.</p>
     <div class="hero-cta">
-      <a href="#inversionistas" class="btn btn-light">I’m an investor</a>
-      <a href="#originadores" class="btn btn-line">I’m an originator</a>
+      <a href="#contacto" class="btn btn-light">Request the memorandum</a>
+      <a href="#como-funciona" class="btn btn-line">See how it works</a>
     </div>
     <div class="proof" id="aliados" aria-label="Partners and advisors">
       <div><span class="bc"><img src="../assets/fiduciaria-bancolombia-white.png" alt="" width="26" height="26">Fiduciaria Bancolombia</span><p class="k">Fiduciary</p></div>
-      <div><img src="../assets/deloitte-white.png" alt="Deloitte" style="height:20px"><p class="k">Audit · CO and MX</p></div>
-      <div><img src="../assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:18px"><p class="k">Legal counsel</p></div>
+      <div><img src="../assets/deloitte-white.png" alt="Deloitte" style="height:24px"><p class="k">Audit · CO and MX</p></div>
+      <div><img src="../assets/holland-knight-white.png" alt="Holland &amp; Knight" style="height:21px"><p class="k">Legal counsel</p></div>
     </div>
   </div>
 </section>
@@ -90,38 +87,31 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="tag">How it works</p>
-      <h2>From capital to loans, and back</h2>
+      <h2>Your loan, the portfolio and the collateral</h2>
     </div>
-    <div class="flow reveal">
-      <div class="flow-visual" aria-hidden="true">
-        <svg viewBox="112 62 280 244" fill="none" stroke="#FFFFFF" stroke-width="10"><circle cx="177" cy="240" r="58"/><rect x="268" y="68" width="116" height="230" rx="58"/></svg>
-        <span class="flow-num" id="flow-num">01</span>
-      </div>
-      <div class="card flow-card">
-        <div class="flow-panel" id="flow-panel" aria-live="polite">
-          <div class="fade"><h3>Funding</h3><p>The investor lends to Finmobil through a private debt instrument with a set rate, term and payment schedule.</p></div>
-        </div>
-        <div>
-          <div class="stepper" role="tablist" aria-label="Steps">
-            <button class="step-btn" role="tab" aria-selected="true" data-step="0"><span class="n">01</span>Funding</button>
-            <button class="step-btn" role="tab" aria-selected="false" data-step="1"><span class="n">02</span>Portfolio purchase</button>
-            <button class="step-btn" role="tab" aria-selected="false" data-step="2"><span class="n">03</span>Collection</button>
-            <button class="step-btn" role="tab" aria-selected="false" data-step="3"><span class="n">04</span>Investor payout</button>
-          </div>
-          <div class="step-progress" aria-hidden="true"><span id="step-bar"></span></div>
-        </div>
-      </div>
+    <div class="struct reveal" id="estructura">
+      <div class="node"><span class="nn">01</span><h3>Investor</h3><p>Lends to Finmobil at a fixed rate through private debt <button type="button" class="info" aria-label="What is private debt?" data-tip-title="Private debt" data-tip="A direct loan from investors to a company, outside public securities markets, with rate, term and payment schedule set by contract.">i</button>, with a set term and payment schedule.</p></div>
+      <div class="arrow" aria-hidden="true"><span>Loan</span></div>
+      <div class="node"><span class="nn">02</span><h3>Finmobil</h3><p>Uses that capital to buy payroll-loan portfolios from originators <button type="button" class="info" aria-label="What is originator?" data-tip-title="Originator" data-tip="A credit union, fintech or financial institution that lends to the worker or pensioner and then sells the loan portfolio.">i</button>.</p></div>
+      <div class="arrow" aria-hidden="true"><span>Portfolio purchase</span></div>
+      <div class="node"><span class="nn">03</span><h3>Segregated trust <button type="button" class="info" aria-label="What is segregated trust?" data-tip-title="Segregated trust" data-tip="A trust (patrimonio autónomo) managed by a fiduciary. The portfolio and its collections are legally separated from the balance sheets of Finmobil and the originator, so neither one’s creditors can reach those assets.">i</button></h3><p>The portfolio and payroll collections sit in a trust managed by Fiduciaria Bancolombia.</p></div>
+      <div class="arrow" aria-hidden="true"><span>Beneficiary</span></div>
+      <div class="node"><span class="nn">04</span><h3>Beneficiary company <button type="button" class="info" aria-label="What is beneficiary company?" data-tip-title="Beneficiary company" data-tip="The company that is the beneficiary of the segregated trust: it is entitled to the portfolio’s cash flows once the structure’s costs are covered.">i</button></h3><p>The beneficiary of the trust. Its shares are represented by tokens.</p></div>
+    </div>
+    <div class="loop reveal">
+      <p><span class="k">Collateral</span>The beneficiary company’s tokens <button type="button" class="info" aria-label="What is token?" data-tip-title="Token" data-tip="A digital record representing ownership of an asset, here common shares of the beneficiary company. Ownership can be transferred and verified with full traceability.">i</button> serve as collateral <button type="button" class="info" aria-label="What is collateral?" data-tip-title="Collateral" data-tip="Security for the loan. If Finmobil defaults, the investor can enforce the security over the tokens and, through them, over the shares they represent.">i</button> for the investor’s loan.</p>
+      <p><span class="k">Payments</span>Interest and principal flow back to the investor on the agreed schedule.</p>
     </div>
 
     <div class="sub-head reveal" id="protecciones">
       <p class="tag">Protections</p>
       <h2>How capital is protected</h2>
     </div>
-    <div class="rows reveal" id="estructura">
+    <div class="rows reveal">
       <div><h3>Segregated trust <button type="button" class="info" aria-label="What is segregated trust?" data-tip-title="Segregated trust" data-tip="A trust (patrimonio autónomo) managed by a fiduciary. The portfolio and its collections are legally separated from the balance sheets of Finmobil and the originator, so neither one’s creditors can reach those assets.">i</button></h3><p>The portfolio and its collections sit in a trust managed by Fiduciaria Bancolombia, separate from the balance sheets of Finmobil and the originator.</p></div>
-      <div><h3>Holdback and repurchase <button type="button" class="info" aria-label="What is holdback and repurchase?" data-tip-title="Holdback and repurchase" data-tip="Holdback: part of the purchase price is paid to the originator only if the portfolio performs as expected. Repurchase: the originator must buy back loans that fail the agreed criteria.">i</button></h3><p>The originator leaves part of the price as security and buys back loans that fail the criteria. It shares the risk with us.</p></div>
-      <div><h3>Eligibility criteria <button type="button" class="info" aria-label="What is eligibility criteria?" data-tip-title="Eligibility criteria" data-tip="Rules every loan must meet before purchase: rate, term, borrower profile, and concentration limits by borrower, payroll payer and originator.">i</button></h3><p>Before each purchase we set rate, term, borrower profile, and limits by borrower, payroll payer and originator.</p></div>
-      <div><h3>Traceability</h3><p>A loan-by-loan digital record of the portfolio, with periodic reports on collections, delinquencies and prepayments.</p></div>
+      <div><h3>Tokenized collateral <button type="button" class="info" aria-label="What is collateral?" data-tip-title="Collateral" data-tip="Security for the loan. If Finmobil defaults, the investor can enforce the security over the tokens and, through them, over the shares they represent.">i</button></h3><p>Your loan is secured by tokens representing common shares of the company that is the beneficiary of the segregated trust.</p></div>
+      <div><h3>Holdback and repurchase <button type="button" class="info" aria-label="What is holdback and repurchase?" data-tip-title="Holdback and repurchase" data-tip="Holdback: part of the purchase price is paid to the originator only if the portfolio performs as expected. Repurchase: the originator must buy back loans that fail the agreed criteria.">i</button></h3><p>The originator leaves part of the price as security and buys back loans that fail the eligibility criteria.</p></div>
+      <div><h3>Traceability</h3><p>A loan-by-loan digital record of the portfolio and of the tokens, with periodic reports on collections, delinquencies and prepayments.</p></div>
     </div>
   </div>
 </section>
@@ -137,6 +127,7 @@
       <div><h3>Credit</h3><div class="rm"><p><span class="k">Risk</span>Borrower job loss or death.</p><p><span class="k">Mitigant</span>Insurance, diversification and concentration limits.</p></div></div>
       <div><h3>Payroll payer</h3><div class="rm"><p><span class="k">Risk</span>Employer delays in remitting deductions.</p><p><span class="k">Mitigant</span>Limits per payroll payer and monthly monitoring of collections.</p></div></div>
       <div><h3>Originator</h3><div class="rm"><p><span class="k">Risk</span>Servicing failures or weak portfolio quality.</p><p><span class="k">Mitigant</span>Due diligence, holdback and repurchase, and a backup servicer <button type="button" class="info" aria-label="What is backup servicer?" data-tip-title="Backup servicer" data-tip="An entity ready to take over collection and servicing of the portfolio if the originator stops doing it.">i</button>.</p></div></div>
+      <div><h3>Tokenization and custody</h3><div class="rm"><p><span class="k">Risk</span>Failures in the platform that issues and records the tokens, or in their custody.</p><p><span class="k">Mitigant</span>Provider, custody and security documents detailed in the investment memorandum <button type="button" class="info" aria-label="What is investment memorandum?" data-tip-title="Investment memorandum" data-tip="A confidential document with the full terms, structure, financial model and risks of each transaction.">i</button>.</p></div></div>
       <div><h3>Regulatory and FX</h3><div class="rm"><p><span class="k">Risk</span>Regulatory or exchange-rate changes in Colombia and Mexico.</p><p><span class="k">Mitigant</span>Assessed per transaction and detailed in the investment memorandum <button type="button" class="info" aria-label="What is investment memorandum?" data-tip-title="Investment memorandum" data-tip="A confidential document with the full terms, structure, financial model and risks of each transaction.">i</button>.</p></div></div>
     </div>
   </div>
@@ -154,6 +145,7 @@
       <aside class="card terms reveal">
         <h3>Indicative terms</h3>
         <div><span>Instrument</span><span>Private debt <button type="button" class="info" aria-label="What is private debt?" data-tip-title="Private debt" data-tip="A direct loan from investors to a company, outside public securities markets, with rate, term and payment schedule set by contract.">i</button></span></div>
+        <div><span>Collateral</span><span>Tokenized shares <button type="button" class="info" aria-label="What is token?" data-tip-title="Token" data-tip="A digital record representing ownership of an asset, here common shares of the beneficiary company. Ownership can be transferred and verified with full traceability.">i</button></span></div>
         <div><span>Return</span><span>Per transaction</span></div>
         <div><span>Term</span><span>6 to 60 months</span></div>
         <div><span>Interest payments</span><span>Monthly, quarterly, semiannual or at maturity</span></div>
@@ -165,35 +157,37 @@
         <div class="card card-dawn" id="inversionistas-visor">
           <h3 class="sim-title">Simulate your investment</h3>
           <div class="amount">
-            <label for="sim-monto" class="k">Investment amount</label>
-            <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
-          </div>
+                <label for="sim-monto" class="k">Investment amount</label>
+                <div class="amount-line"><span class="cur" id="amount-cur" aria-hidden="true">USD</span><input id="sim-monto" type="text" inputmode="numeric" autocomplete="off" value="100,000"></div>
+              </div>
 
-          <div class="controls">
-            <div class="field notch"><label for="sim-moneda">Currency</label>
-              <select id="sim-moneda" class="input"><option value="USD">USD · Dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option></select></div>
-            <div class="field f-rate">
-              <div class="notch"><label for="sim-tasa">Annual rate · 6% to 24%</label>
-                <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="e.g. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
-              <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Annual rate slider">
-              <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
-              <p id="sim-tasa-aviso" class="warn" role="alert" hidden>The rate must be between 6% and 24% per year.</p>
+              <div class="controls">
+                <div class="field notch"><label for="sim-moneda">Currency</label>
+                  <select id="sim-moneda" class="input"><option value="USD">USD · Dollar</option><option value="COP">COP · Colombian peso</option><option value="MXN">MXN · Mexican peso</option></select></div>
+                <div class="field f-rate">
+                  <div class="notch"><label for="sim-tasa">Annual rate · 6% to 24%</label>
+                    <input id="sim-tasa" class="input" type="number" min="6" max="24" step="0.1" inputmode="decimal" placeholder="e.g. 12" value="12" aria-describedby="sim-tasa-aviso"></div>
+                  <input id="sim-tasa-rango" type="range" min="6" max="24" step="0.5" value="12" aria-label="Annual rate slider">
+                  <div class="range-scale" aria-hidden="true"><span>6%</span><span>15%</span><span>24%</span></div>
+                  <p id="sim-tasa-aviso" class="warn" role="alert" hidden>The rate must be between 6% and 24% per year.</p>
+                </div>
+                <div class="field notch"><label for="sim-plazo">Term</label>
+                  <select id="sim-plazo" class="input"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
+              </div>
+
+              <div id="sim-freq" class="freq-group" role="group" aria-label="Interest payments">
+                <button type="button" class="freq" data-f="1" aria-pressed="true">Monthly</button>
+                <button type="button" class="freq" data-f="3" aria-pressed="false">Quarterly</button>
+                <button type="button" class="freq" data-f="6" aria-pressed="false">Semiannual</button>
+                <button type="button" class="freq" data-f="0" aria-pressed="false">At maturity</button>
+              </div>
+
+              <div class="cells" aria-live="polite">
+                <div><p class="k" id="out-per-label">Monthly payment</p><p class="v" id="out-per">—</p></div>
+                <div><p class="k">Total interest</p><p class="v accent" id="out-int">—</p></div>
+                <div><p class="k">Total received</p><p class="v" id="out-total">—</p></div>
+              </div>
             </div>
-            <div class="field notch"><label for="sim-plazo">Term</label>
-              <select id="sim-plazo" class="input"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48">48 months</option><option value="60">60 months</option></select></div>
-          </div>
-
-          <div id="sim-freq" class="freq-group" role="group" aria-label="Interest payments">
-            <button type="button" class="freq" data-f="1" aria-pressed="true">Monthly</button>
-            <button type="button" class="freq" data-f="3" aria-pressed="false">Quarterly</button>
-            <button type="button" class="freq" data-f="6" aria-pressed="false">Semiannual</button>
-            <button type="button" class="freq" data-f="0" aria-pressed="false">At maturity</button>
-          </div>
-
-          <div class="cells" aria-live="polite">
-            <div><p class="k" id="out-per-label">Monthly payment</p><p class="v" id="out-per">—</p></div>
-            <div><p class="k">Total interest</p><p class="v accent" id="out-int">—</p></div>
-            <div><p class="k">Total received</p><p class="v" id="out-total">—</p></div>
           </div>
         </div>
         <div class="card">
@@ -211,45 +205,7 @@
   </div>
 </section>
 
-<!-- 6 · ORIGINATORS -->
-<section class="section" id="originadores">
-  <div class="wrap split">
-    <div class="reveal" style="display:flex;flex-direction:column;gap:18px">
-      <p class="tag">For originators</p>
-      <h2 class="h-xl">Do you originate payroll-deduction loans? Let’s talk</h2>
-      <p class="lead-m">For credit unions and originators <button type="button" class="info" aria-label="What is originator?" data-tip-title="Originator" data-tip="A credit union, fintech or financial institution that lends to the worker or pensioner and then sells the loan portfolio.">i</button> in Colombia and Mexico that want to lend more without waiting for their portfolio to mature.</p>
-      <ul class="checks">
-        <li>Recurring portfolio purchases, not one-off deals.</li>
-        <li><span>You keep servicing collections <button type="button" class="info" aria-label="What is collections?" data-tip-title="Collections" data-tip="The installments that payroll payers deduct from wages and remit each month.">i</button> and your client relationships.</span></li>
-        <li><span>A trust structure <button type="button" class="info" aria-label="What is segregated trust?" data-tip-title="Segregated trust" data-tip="A trust (patrimonio autónomo) managed by a fiduciary. The portfolio and its collections are legally separated from the balance sheets of Finmobil and the originator, so neither one’s creditors can reach those assets.">i</button> and standard documentation from the first purchase.</span></li>
-      </ul>
-    </div>
-    <div class="card card-dawn reveal d1" style="display:flex;flex-direction:column;gap:18px">
-      <h3 style="font-size:32px;line-height:1.08">Let’s build a long-term partnership</h3>
-      <p class="hint"><strong>To move faster, tell us:</strong>Entity and country · Portfolio balance · Main payroll payers · Historical portfolio performance</p>
-      <a href="mailto:info@finmobilsas.com?subject=Partnership%20with%20Finmobil%20-%20Payroll%20loan%20origination" class="btn btn-light btn-wrap" style="align-self:flex-start">Email info@finmobilsas.com</a>
-    </div>
-  </div>
-</section>
-
-<!-- 6b · ENERGÍA LIMPIA -->
-<section class="section" id="energia">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <p class="tag">Second investment line <span class="badge">In structuring</span></p>
-      <h2>Clean energy: solar system leasing</h2>
-      <p>In Mexico and Colombia, we finance solar generation systems that businesses and households lease <button type="button" class="info" aria-label="What is solar leasing?" data-tip-title="Solar leasing" data-tip="The customer uses the solar system without buying it and pays a monthly lease under contract. The equipment remains the property of the vehicle that financed it.">i</button> for a monthly payment. The lease is designed to cost less than what the customer saves on their electricity bill.</p>
-    </div>
-    <div class="grid-3 reveal">
-      <article><h3>The asset</h3><p>Panels, inverters and batteries installed on the rooftops of businesses and homes, with a useful life of 25 years or more.</p></article>
-      <article><h3>The cash flow</h3><p>Monthly lease payments under long-term contracts, paid out of the customer’s energy savings.</p></article>
-      <article><h3>The structure</h3><p>A dedicated vehicle, separate from the payroll-loan portfolio: each investor chooses which line to join.</p></article>
-    </div>
-    <a href="#contacto" class="btn btn-line reveal" style="margin-top:22px">Tell me about this line</a>
-  </div>
-</section>
-
-<!-- 7 · NOSOTROS -->
+<!-- 6 · NOSOTROS -->
 <section class="section" id="nosotros">
   <div class="wrap">
     <div class="section-head reveal">
@@ -298,11 +254,11 @@
         </div>
       </div>
       <div class="card partner reveal d1">
-        <div class="partner-mark person"><div class="avatar" aria-hidden="true">PE</div><div><h3>Patricia Estopier</h3><p>Business Development Director</p></div></div>
+        <div class="partner-mark person"><div class="avatar" aria-hidden="true">PS</div><div><h3>Patricia Scott</h3><p>Business Development Director</p></div></div>
         <div class="partner-foot">
           <p class="k">Mexico</p>
           <!-- Pendiente: URL de LinkedIn -->
-          <a class="li-btn" href="#" target="_blank" rel="noopener" aria-label="Patricia Estopier on LinkedIn">LinkedIn ↗</a>
+          <a class="li-btn" href="#" target="_blank" rel="noopener" aria-label="Patricia Scott on LinkedIn">LinkedIn ↗</a>
         </div>
       </div>
       <div class="card partner reveal d2">
